@@ -44,18 +44,19 @@ export function Navbar() {
       <nav className="absolute top-[160px] left-0 right-0 z-50 px-4 text-white font-medium ">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold md:hidden block">
-            <span className="text-[#EF443B]">Intleaf</span>Guard
+            <span className="text-black">Intleaf</span>Guard
           </Link>
 
           <ul className="hidden md:flex gap-8 md:w-full md:items-center md:justify-center text-sm bg-[#1A1A1A]/80 px-8 py-3 rounded-full">
             <li><Link href="#" className="hover:text-[#EF443B]">Home</Link></li>
             <li><Link href="#about" className="hover:text-[#EF443B]">About Us</Link></li>
             <li><Link href="#services" className="hover:text-[#EF443B]">Our Services</Link></li>
-            <li><Link href="#team" className="hover:text-[#EF443B]">Security Team</Link></li>
-            <li><Link href="#resources" className="hover:text-[#EF443B]">Resources</Link></li>
+            <li><Link href="#securityteam" className="hover:text-[#EF443B]">Security Team</Link></li>
+            <li><Link href="#available" className="hover:text-[#EF443B]">Available</Link></li>
+            <li><Link href="#blog" className="hover:text-[#EF443B]">Blog</Link></li>
             <li>
-              <Link href="#quote" className="bg-[#EF443B] text-white px-4 py-2 rounded hover:bg-[#C6362E]">
-                Get a Quote
+              <Link href="#contact" className="bg-[#EF443B] text-white px-4 py-2 rounded hover:bg-[#C6362E]">
+                Contact
               </Link>
             </li>
           </ul>

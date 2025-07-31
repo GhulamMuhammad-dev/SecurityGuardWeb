@@ -48,7 +48,7 @@ const guards = [
 
 export default function GuardSection() {
   return (
-    <section className="py-20 bg-[#f6f7f9]">
+    <section className="py-20 bg-[#f6f7f9]" id="securityteam">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
           Meet Our Security Experts

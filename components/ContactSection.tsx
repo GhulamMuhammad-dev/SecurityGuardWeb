@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export function ContactSection() {
   return (
-    <section className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937] relative overflow-hidden">
+    <section className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937] relative overflow-hidden" id="contact">
       <div className="relative max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-[#EF443B] font-semibold tracking-wider uppercase text-sm">
