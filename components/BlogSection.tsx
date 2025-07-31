@@ -1,3 +1,5 @@
+'use client';
+
 const blogs = [
   {
     title: "5 Key Benefits of Hiring a Manned Guarding Service",
@@ -27,59 +29,53 @@ const blogs = [
 
 export function BlogSection() {
   return (
-    <section className="py-28 px-6 bg-[#10002B] text-[#E0AAFF] relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-1/4 w-48 h-48 rounded-full bg-[#C77DFF] blur-3xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full bg-[#9D4EDD] blur-3xl"></div>
-      </div>
-
+    <section className="py-28 px-6 bg-[#1A1A1A] text-[#F4F4F4] relative overflow-hidden">
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-[#C77DFF] font-semibold tracking-wider uppercase text-sm">
+          <span className="text-[#EF443B] font-semibold tracking-wider uppercase text-sm">
             Security Insights
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Latest <span className="text-[#C77DFF]">Industry Updates</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
+            Latest <span className="text-[#EF443B]">Industry Updates</span>
           </h2>
-          <p className="text-xl max-w-2xl mx-auto text-[#E0AAFF]/80">
+          <p className="text-xl max-w-2xl mx-auto text-[#F4F4F4]/80">
             Expert knowledge and security best practices to help you make informed decisions.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {blogs.map((post, index) => (
-            <article 
-              key={index} 
-              className="bg-[#240046] hover:bg-[#3C096C] border border-[#3C096C] hover:border-[#C77DFF] rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 group"
+            <article
+              key={index}
+              className="bg-[#2B2B2B] hover:bg-[#333333] border border-[#3A3A3A] hover:border-[#EF443B] rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 group"
             >
               <div className="h-full flex flex-col">
-                {/* Image placeholder - replace with actual blog images */}
-                <div className="h-48 bg-[#3C096C] flex items-center justify-center">
-                  <DocumentTextIcon className="w-16 h-16 text-[#C77DFF]" />
+                {/* Placeholder icon or image */}
+                <div className="h-48 bg-[#262626] flex items-center justify-center">
+                  <DocumentTextIcon className="w-16 h-16 text-[#EF443B]" />
                 </div>
-                
+
                 <div className="p-6 flex-grow">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-semibold text-[#C77DFF] uppercase tracking-wider">
+                    <span className="text-xs font-semibold text-[#EF443B] uppercase tracking-wider">
                       {post.category}
                     </span>
-                    <span className="text-xs text-[#E0AAFF]/60">
+                    <span className="text-xs text-[#F4F4F4]/60">
                       {post.date}
                     </span>
                   </div>
-                  
-                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#C77DFF] transition-colors">
+
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#EF443B] transition-colors">
                     {post.title}
                   </h3>
-                  
-                  <p className="text-[#E0AAFF]/80 mb-4 text-sm">
+
+                  <p className="text-[#F4F4F4]/80 mb-4 text-sm">
                     {post.excerpt}
                   </p>
                 </div>
-                
+
                 <div className="px-6 pb-6">
-                  <button className="text-[#C77DFF] font-medium text-sm flex items-center gap-2 group-hover:underline">
+                  <button className="text-[#EF443B] font-medium text-sm flex items-center gap-2 group-hover:underline">
                     Read article
                     <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
@@ -90,7 +86,7 @@ export function BlogSection() {
         </div>
 
         <div className="text-center mt-16">
-          <button className="border-2 border-[#C77DFF] text-[#C77DFF] hover:bg-[#C77DFF] hover:text-black font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105">
+          <button className="border-2 border-[#EF443B] text-[#EF443B] hover:bg-[#EF443B] hover:text-white font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105">
             View All Articles
           </button>
         </div>
@@ -102,7 +98,18 @@ export function BlogSection() {
 // Icon components
 function DocumentTextIcon({ className }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
       <polyline points="14 2 14 8 20 8"></polyline>
       <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -114,7 +121,18 @@ function DocumentTextIcon({ className }: { className?: string }) {
 
 function ArrowRightIcon({ className }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <line x1="5" y1="12" x2="19" y2="12"></line>
       <polyline points="12 5 19 12 12 19"></polyline>
     </svg>

@@ -1,9 +1,14 @@
-import { AboutSection } from '@/components/AboutSection'
+
+import AboutSection from '@/components/AboutSection'
 import { BlogSection } from '@/components/BlogSection'
 import { ContactSection } from '@/components/ContactSection'
-import { GuardsSection } from '@/components/GuardsSection'
+import GuardSection from '@/components/GuardsSection'
 import { HeroSection } from '@/components/HeroSection'
-import { ServicesSection } from '@/components/ServicesSection'
+import Practice from '@/components/Practice'
+import ServiceCoverage from '@/components/ServiceCoverage'
+import ServicesSection from '@/components/ServicesSection'
+import StatsCounter from '@/components/StatsCounter'
+
 import React from 'react'
 
 const App = () => {
@@ -12,10 +17,13 @@ const App = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <GuardsSection />
+      <StatsCounter />
+      <GuardSection />
+      <ServiceCoverage />
       <BlogSection />
       <ContactSection />
       
+       {/* <Practice /> */}
     </div>
   )
 }

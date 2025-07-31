@@ -1,89 +1,64 @@
 export function Footer() {
   return (
-    <footer className="bg-[#10002B] text-[#E0AAFF] pt-16 pb-10 px-6 border-t border-[#3C096C]">
+    <footer className="bg-[#1A1A1A] text-[#F4F4F4] pt-16 pb-10 px-6 border-t border-gray-800">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Company Info */}
-          <div className="text-left">
-            <h3 className="text-xl font-bold mb-4 text-[#C77DFF]">Intleaf Security</h3>
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-[#EF443B]">Intleaf Security</h3>
             <p className="text-sm mb-4">
-              Professional security services you can trust. Protecting what matters most since 2010.
+              Trusted nationwide for corporate, event, and asset protection. Delivering professional security services since 2010.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-[#E0AAFF] hover:text-[#C77DFF] transition-colors">
-                <span className="sr-only">Facebook</span>
-                <FacebookIcon className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-[#E0AAFF] hover:text-[#C77DFF] transition-colors">
-                <span className="sr-only">Twitter</span>
-                <TwitterIcon className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-[#E0AAFF] hover:text-[#C77DFF] transition-colors">
-                <span className="sr-only">LinkedIn</span>
-                <LinkedInIcon className="w-5 h-5" />
-              </a>
+              <SocialIcon href="#" label="Facebook"><FacebookIcon className="w-5 h-5" /></SocialIcon>
+              <SocialIcon href="#" label="Twitter"><TwitterIcon className="w-5 h-5" /></SocialIcon>
+              <SocialIcon href="#" label="LinkedIn"><LinkedInIcon className="w-5 h-5" /></SocialIcon>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="text-left">
-            <h3 className="text-lg font-semibold mb-4 text-[#C77DFF]">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:underline hover:text-[#C77DFF] transition-colors">About Us</a></li>
-              <li><a href="#services" className="hover:underline hover:text-[#C77DFF] transition-colors">Services</a></li>
-              <li><a href="#blog" className="hover:underline hover:text-[#C77DFF] transition-colors">Blog</a></li>
-              <li><a href="#contact" className="hover:underline hover:text-[#C77DFF] transition-colors">Contact</a></li>
-            </ul>
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-[#EF443B]">Quick Links</h3>
+            <FooterLinkList links={[
+              { label: 'Home', href: '#' },
+              { label: 'About Us', href: '#about' },
+              { label: 'Services', href: '#services' },
+              { label: 'Careers', href: '#careers' },
+              { label: 'Contact', href: '#contact' }
+            ]} />
           </div>
 
           {/* Services */}
-          <div className="text-left">
-            <h3 className="text-lg font-semibold mb-4 text-[#C77DFF]">Services</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Static Guarding</a></li>
-              <li><a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Mobile Patrols</a></li>
-              <li><a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Event Security</a></li>
-              <li><a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Retail Security</a></li>
-              <li><a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Alarm Response</a></li>
-            </ul>
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-[#EF443B]">Services</h3>
+            <FooterLinkList links={[
+              { label: 'Static Guarding', href: '#' },
+              { label: 'Mobile Patrols', href: '#' },
+              { label: 'Event Security', href: '#' },
+              { label: 'Retail Protection', href: '#' },
+              { label: 'Alarm Response', href: '#' }
+            ]} />
           </div>
 
           {/* Contact Info */}
-          <div className="text-left">
-            <h3 className="text-lg font-semibold mb-4 text-[#C77DFF]">Contact Us</h3>
-            <address className="not-italic text-sm space-y-2">
-              <p className="flex items-start gap-2">
-                <MapPinIcon className="w-4 h-4 mt-0.5 text-[#C77DFF]" />
-                <span>123 Security Ave, Safe City, SC 12345</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <PhoneIcon className="w-4 h-4 text-[#C77DFF]" />
-                <a href="tel:+1234567890" className="hover:underline">+1 (234) 567-890</a>
-              </p>
-              <p className="flex items-center gap-2">
-                <MailIcon className="w-4 h-4 text-[#C77DFF]" />
-                <a href="mailto:contact@intleafsecurity.com" className="hover:underline">contact@intleafsecurity.com</a>
-              </p>
-              <p className="flex items-center gap-2">
-                <ClockIcon className="w-4 h-4 text-[#C77DFF]" />
-                <span>24/7 Emergency Response</span>
-              </p>
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-[#EF443B]">Contact Us</h3>
+            <address className="not-italic text-sm space-y-3">
+              <ContactItem icon={<MapPinIcon />} text="456 Shield Lane, London, UK" />
+              <ContactItem icon={<PhoneIcon />} text={<a href="tel:+442033221100">+44 20 3322 1100</a>} />
+              <ContactItem icon={<MailIcon />} text={<a href="mailto:info@intleafsecurity.co.uk">info@intleafsecurity.co.uk</a>} />
+              <ContactItem icon={<ClockIcon />} text="24/7 Response Nationwide" />
             </address>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#3C096C]">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm">
-              &copy; {new Date().getFullYear()} Intleaf Security. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Terms of Service</a>
-              <a href="#" className="hover:underline hover:text-[#C77DFF] transition-colors">Sitemap</a>
-            </div>
+        <div className="pt-8 border-t border-gray-800 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+          <p>&copy; {new Date().getFullYear()} Intleaf Security. All rights reserved.</p>
+          <div className="flex gap-6">
+            <FooterPolicyLink label="Privacy Policy" />
+            <FooterPolicyLink label="Terms of Service" />
+            <FooterPolicyLink label="Sitemap" />
           </div>
         </div>
       </div>
@@ -91,62 +66,85 @@ export function Footer() {
   );
 }
 
-// Icon components (replace with your actual icons)
+// === Helpers ===
+
+function FooterLinkList({ links }: { links: { label: string; href: string }[] }) {
+  return (
+    <ul className="space-y-2 text-sm">
+      {links.map((link, idx) => (
+        <li key={idx}>
+          <a href={link.href} className="hover:text-[#C6362E] transition-colors">
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ContactItem({ icon, text }: { icon: React.ReactNode; text: React.ReactNode }) {
+  return (
+    <p className="flex items-start gap-2">
+      <span className="text-[#EF443B] mt-0.5">{icon}</span>
+      <span>{text}</span>
+    </p>
+  );
+}
+
+function SocialIcon({ href, label, children }: { href: string; label: string; children: React.ReactNode }) {
+  return (
+    <a href={href} className="text-[#F4F4F4] hover:text-[#C6362E] transition-colors" aria-label={label}>
+      {children}
+    </a>
+  );
+}
+
+function FooterPolicyLink({ label }: { label: string }) {
+  return (
+    <a href="#" className="hover:text-[#C6362E] transition-colors">
+      {label}
+    </a>
+  );
+}
+
+// === Icons ===
+
 function FacebookIcon({ className }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+    <svg fill="currentColor" viewBox="0 0 24 24" className={className}>
+      <path d="M22 12A10 10 0 1 0 10.06 21.9v-6.3H7.08v-3.6h2.98v-2.75c0-2.95 1.75-4.57 4.43-4.57 1.29 0 2.64.23 2.64.23v2.89h-1.49c-1.47 0-1.93.91-1.93 1.84v2.36h3.3l-.53 3.6h-2.77v6.3A10 10 0 0 0 22 12Z" />
     </svg>
   );
 }
 
 function TwitterIcon({ className }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+    <svg fill="currentColor" viewBox="0 0 24 24" className={className}>
+      <path d="M8 19c7.5 0 11.6-6.2 11.6-11.6v-.5A8.18 8.18 0 0 0 22 5.9a8.2 8.2 0 0 1-2.4.7 4.1 4.1 0 0 0 1.8-2.3 8.2 8.2 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 2 4.8a4.1 4.1 0 0 0 1.3 5.5A4.1 4.1 0 0 1 2.8 9.7v.1a4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.9A8.2 8.2 0 0 1 2 18.4 11.6 11.6 0 0 0 8 19Z" />
     </svg>
   );
 }
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+    <svg fill="currentColor" viewBox="0 0 24 24" className={className}>
+      <path d="M19 0H5A5 5 0 0 0 0 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5Zm-8 19H8V8h3v11Zm-1.5-12.3A1.8 1.8 0 1 1 10 4.9a1.8 1.8 0 0 1-.5 1.8ZM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19Z" />
     </svg>
   );
 }
 
-function MapPinIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-      <circle cx="12" cy="10" r="3"/>
-    </svg>
-  );
+function MapPinIcon() {
+  return <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>;
 }
 
-function PhoneIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-    </svg>
-  );
+function PhoneIcon() {
+  return <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 2 4.11a2 2 0 0 1 2-2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>;
 }
 
-function MailIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-      <polyline points="22,6 12,13 2,6"/>
-    </svg>
-  );
+function MailIcon() {
+  return <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>;
 }
 
-function ClockIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <circle cx="12" cy="12" r="10"/>
-      <polyline points="12 6 12 12 16 14"/>
-    </svg>
-  );
+function ClockIcon() {
+  return <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>;
 }

@@ -1,140 +1,85 @@
-'use client'
-import Link from "next/link";
-import { useState } from "react";
-import { Menu, X, Phone, Mail } from "lucide-react";
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-[#10002B] text-[#E0AAFF] sticky top-0 z-50 shadow-lg">
-      {/* Top contact bar */}
-      <div className="bg-[#240046] px-4 py-2 hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-end items-center gap-6 text-sm">
-          <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-[#C77DFF] transition-colors">
-            <Phone className="w-4 h-4" />
-            <span>+1 (234) 567-890</span>
-          </a>
-          <a href="mailto:contact@intleafsecurity.com" className="flex items-center gap-2 hover:text-[#C77DFF] transition-colors">
-            <Mail className="w-4 h-4" />
-            <span>contact@intleafsecurity.com</span>
-          </a>
+    <>
+      {/* Top emergency bar */}
+      <div className="bg-[#1A1A1A] text-[#F4F4F4] text-sm py-2 px-4 flex justify-between items-center ">
+        <span>24/7 Emergency Service: <span className="font-semibold text-white">Call Now: +1 (555) 123-4567</span></span>
+        <div className="flex items-center gap-4">
+          <span>Follow Our Security Updates:</span>
+          <a href="#" className="hover:text-[#EF443B]">📘</a>
+          <a href="#" className="hover:text-[#EF443B]">🔗</a>
+          <a href="#" className="hover:text-[#EF443B]">📸</a>
         </div>
       </div>
 
-      {/* Main navigation */}
-      <nav className="max-w-7xl mx-auto px-4 py-4 md:px-6 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold hover:text-[#C77DFF] transition-colors">
-          Intleaf Security
-        </Link>
+      {/* Centered contact row */}
+      <div className="bg-white text-[#1A1A1A] py-4 px-6 hidden md:flex justify-between items-center shadow">
+        <div className="flex items-center space-x-2 text-2xl font-bold">
+          <span className="text-[#EF443B]">Intleaf</span><span>Guard</span>
+        </div>
+        <div className="flex items-center gap-10 text-sm">
+          <div className="text-center">
+            <div className="uppercase text-xs font-semibold">Headquarters</div>
+            <div>456 Security Ave, Safe City</div>
+          </div>
+          <div className="text-center">
+            <div className="uppercase text-xs font-semibold">Email Us</div>
+            <div>contact@secureguard.com</div>
+          </div>
+          <div className="text-center">
+            <div className="uppercase text-xs font-semibold">Emergency</div>
+            <div>+1 (555) 987-6543</div>
+          </div>
+        </div>
+      </div>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex gap-8 text-sm font-medium">
-          <li>
-            <Link href="#" className="hover:text-[#C77DFF] transition-colors">Home</Link>
-          </li>
-          <li>
-            <Link href="#about" className="hover:text-[#C77DFF] transition-colors">About</Link>
-          </li>
-          <li>
-            <Link href="#services" className="hover:text-[#C77DFF] transition-colors">Services</Link>
-          </li>
-          <li>
-            <Link href="#guards" className="hover:text-[#C77DFF] transition-colors">Our Guards</Link>
-          </li>
-          <li>
-            <Link href="#blog" className="hover:text-[#C77DFF] transition-colors">Blog</Link>
-          </li>
-          <li>
-            <Link href="#contact" className="bg-[#C77DFF] text-black px-4 py-2 rounded hover:bg-[#9D4EDD] transition-colors">
-              Contact Us
-            </Link>
-          </li>
-        </ul>
+      {/* Navigation over Hero */}
+      <nav className="absolute top-[160px] left-0 right-0 z-50 px-4 text-white font-medium ">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold md:hidden block">
+            <span className="text-[#EF443B]">Intleaf</span>Guard
+          </Link>
 
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C77DFF]"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </nav>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden bg-[#10002B] border-t border-[#3C096C]">
-          <ul className="px-4 py-4 space-y-4">
+          <ul className="hidden md:flex gap-8 md:w-full md:items-center md:justify-center text-sm bg-[#1A1A1A]/80 px-8 py-3 rounded-full">
+            <li><Link href="#" className="hover:text-[#EF443B]">Home</Link></li>
+            <li><Link href="#about" className="hover:text-[#EF443B]">About Us</Link></li>
+            <li><Link href="#services" className="hover:text-[#EF443B]">Our Services</Link></li>
+            <li><Link href="#team" className="hover:text-[#EF443B]">Security Team</Link></li>
+            <li><Link href="#resources" className="hover:text-[#EF443B]">Resources</Link></li>
             <li>
-              <Link 
-                href="#" 
-                className="block py-2 hover:text-[#C77DFF] transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Home
+              <Link href="#quote" className="bg-[#EF443B] text-white px-4 py-2 rounded hover:bg-[#C6362E]">
+                Get a Quote
               </Link>
-            </li>
-            <li>
-              <Link 
-                href="#about" 
-                className="block py-2 hover:text-[#C77DFF] transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="#services" 
-                className="block py-2 hover:text-[#C77DFF] transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="#guards" 
-                className="block py-2 hover:text-[#C77DFF] transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Our Guards
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="#blog" 
-                className="block py-2 hover:text-[#C77DFF] transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="#contact" 
-                className="block py-2 hover:text-[#C77DFF] transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
-            <li className="pt-4 border-t border-[#3C096C]">
-              <div className="flex flex-col gap-3 text-sm">
-                <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-[#C77DFF] transition-colors">
-                  <Phone className="w-4 h-4" />
-                  <span>+1 (234) 567-890</span>
-                </a>
-                <a href="mailto:contact@intleafsecurity.com" className="flex items-center gap-2 hover:text-[#C77DFF] transition-colors">
-                  <Mail className="w-4 h-4" />
-                  <span>contact@intleafsecurity.com</span>
-                </a>
-              </div>
             </li>
           </ul>
+
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded">
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-      )}
-    </header>
+
+        {isOpen && (
+          <div className="md:hidden mt-4 bg-[#1A1A1A]/90 rounded-lg p-4 space-y-3 text-white">
+            {['Home', 'About Us', 'Our Services', 'Security Team', 'Resources', 'Get a Quote'].map((label, i) => (
+              <Link
+                key={i}
+                href={`#${label.toLowerCase().replace(/ /g, '')}`}
+                className="block hover:text-[#EF443B]"
+                onClick={() => setIsOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </nav>
+    </>
   );
 }

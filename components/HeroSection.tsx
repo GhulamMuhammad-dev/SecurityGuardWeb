@@ -1,29 +1,13 @@
-"use client"
-import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import Image from "next/image";
+'use client';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 const heroImages = [
-  {
-    src: "/images/securityImg1.webp",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/securityImg2.webp",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/securityImg3.webp",
-    width: 1920,
-    height: 1080
-  },
-  {
-    src: "/images/securityImg4.webp",
-    width: 1920,
-    height: 1080
-  }
+  { src: '/images/securityImg1.webp', width: 1920, height: 1080 },
+  { src: '/images/securityImg2.webp', width: 1920, height: 1080 },
+  { src: '/images/securityImg3.webp', width: 1920, height: 1080 },
+  { src: '/images/securityImg4.webp', width: 1920, height: 1080 },
 ];
 
 export function HeroSection() {
@@ -31,66 +15,56 @@ export function HeroSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000); // Change image every 5 seconds
-
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative h-screen max-h-[800px] overflow-hidden">
-      {/* Image Carousel Background */}
+      {/* Background image layers */}
       <div className="absolute inset-0 z-0">
-        {heroImages.map((image, index) => (
-          <div 
-            key={image.src}
+        {heroImages.map((img, index) => (
+          <div
+            key={img.src}
             className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
           >
-            <Image 
-              src={image.src} 
-              alt="Security guard service" 
-              className="w-full h-full object-cover"
-              width={image.width}
-              height={image.height}
-              priority={index === 0} // Only preload first image
+            <Image
+              src={img.src}
+              alt="Security"
+              fill
+              className="object-cover w-full h-full"
+              priority={index === 0}
               quality={90}
             />
-            <div className="absolute inset-0 bg-[#10002B] opacity-70"></div>
+            <div className="absolute inset-0 bg-[#EF443B] opacity-60"></div>
           </div>
         ))}
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center text-center py-24 px-6 text-[#E0AAFF]">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-          Professional <span className="text-[#C77DFF]">Security Services</span> You Can Trust
+      {/* Hero Content */}
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6 py-24 text-white">
+        <h2 className="text-white font-bold text-lg md:text-xl tracking-wide uppercase mb-3">
+          24/7 Monitoring
+        </h2>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mb-6">
+          <span className='text-black'>Reliable</span> <span className="text-white">Protection Services</span>
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8">
-          Trained. Reliable. On-Demand Security Guards for Commercial, Industrial, and Residential Sites.
-        </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <Button className="bg-[#C77DFF] hover:bg-[#9D4EDD] text-black px-8 py-6 text-lg">
-            Get a Free Quote
-          </Button>
-          <Button 
-            variant="outline" 
-            className="border-2 border-[#C77DFF] text-[#C77DFF] hover:bg-[#240046] px-8 py-6 text-lg"
-          >
-            Speak to Our Team
+        <div className="flex flex-wrap justify-center gap-4 mt-4">
+          <Button className="bg-black hover:bg-gray-900 text-white px-8 py-4 text-lg rounded">
+            Our Services
           </Button>
         </div>
       </div>
 
-      {/* Carousel Indicators */}
+      {/* Carousel Dots */}
       <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center gap-2">
-        {heroImages.map((_, index) => (
+        {heroImages.map((_, i) => (
           <button
-            key={index}
-            onClick={() => setCurrentImageIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all ${index === currentImageIndex ? 'bg-[#C77DFF] w-6' : 'bg-white/50'}`}
-            aria-label={`Go to slide ${index + 1}`}
+            key={i}
+            onClick={() => setCurrentImageIndex(i)}
+            className={`w-3 h-3 rounded-full transition-all ${i === currentImageIndex ? 'bg-[#EF443B] w-6' : 'bg-white/50'}`}
+            aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>
