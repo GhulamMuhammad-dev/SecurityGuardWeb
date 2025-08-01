@@ -68,7 +68,7 @@ export function Navbar() {
 
         {isOpen && (
           <div className="md:hidden mt-4 bg-[#1A1A1A]/90 rounded-lg p-4 space-y-3 text-white">
-            {['Home', 'About Us', 'Our Services', 'Security Team', 'Resources', 'Get a Quote'].map((label, i) => (
+            {['Home', 'About', 'Services', 'Security Team', 'Blog', 'Contact'].map((label, i) => (
               <Link
                 key={i}
                 href={`#${label.toLowerCase().replace(/ /g, '')}`}
