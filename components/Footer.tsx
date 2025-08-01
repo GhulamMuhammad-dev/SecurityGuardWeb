@@ -5,7 +5,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-[#EF443B]">Intleaf Security</h3>
+            <h3 className="text-xl font-bold mb-4 text-[#EF443B]">CrossFrontServices</h3>
             <p className="text-sm mb-4">
               Trusted nationwide for corporate, event, and asset protection. Delivering professional security services since 2010.
             </p>

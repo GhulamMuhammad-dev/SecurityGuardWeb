@@ -9,20 +9,12 @@ export function Navbar() {
   return (
     <>
       {/* Top emergency bar */}
-      <div className="bg-[#1A1A1A] text-[#F4F4F4] text-sm py-2 px-4 flex justify-between items-center ">
-        <span>24/7 Emergency Service: <span className="font-semibold text-white">Call Now: +1 (555) 123-4567</span></span>
-        <div className="flex items-center gap-4">
-          <span>Follow Our Security Updates:</span>
-          <a href="#" className="hover:text-[#EF443B]">📘</a>
-          <a href="#" className="hover:text-[#EF443B]">🔗</a>
-          <a href="#" className="hover:text-[#EF443B]">📸</a>
-        </div>
-      </div>
+
 
       {/* Centered contact row */}
       <div className="bg-white text-[#1A1A1A] py-4 px-6 hidden md:flex justify-between items-center shadow">
         <div className="flex items-center space-x-2 text-2xl font-bold">
-          <span className="text-[#EF443B]">Intleaf</span><span>Guard</span>
+          <span className="text-[#EF443B]">CrossFront</span><span>Services</span>
         </div>
         <div className="flex items-center gap-10 text-sm">
           <div className="text-center">
@@ -41,10 +33,10 @@ export function Navbar() {
       </div>
 
       {/* Navigation over Hero */}
-      <nav className="absolute top-[160px] left-0 right-0 z-50 px-4 text-white font-medium ">
+      <nav className="absolute top-10 md:top-28 left-0 right-0 z-50 px-4 text-white font-medium ">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold md:hidden block">
-            <span className="text-black">Intleaf</span>Guard
+            <span className="text-black">CrossFront</span>Services
           </Link>
 
           <ul className="hidden md:flex gap-8 md:w-full md:items-center md:justify-center text-sm bg-[#1A1A1A]/80 px-8 py-3 rounded-full">
