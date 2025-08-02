@@ -29,6 +29,7 @@ const blogs = [
 
 export function BlogSection() {
   return (
+    <>
     <section className="py-28 px-6 bg-[#1A1A1A] text-[#F4F4F4] relative overflow-hidden" id="blog">
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-16">
@@ -92,6 +93,7 @@ export function BlogSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

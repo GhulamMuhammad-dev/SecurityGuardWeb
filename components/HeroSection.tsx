@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const heroImages = [
@@ -52,8 +53,17 @@ export function HeroSection() {
         </h1>
         <div className="flex flex-wrap justify-center gap-4 mt-4">
           <Button className="bg-black hover:bg-gray-900 text-white px-8 py-4 text-lg rounded">
-            Our Services
+            <Link href="#services">
+               Services
+            </Link>
           </Button>
+           
+           <Button className="bg-[#EF443B] hover:bg-[#C6362E] text-white px-8 py-4 text-lg rounded">
+            <Link href="#contact">
+                Contact
+            </Link>
+            </Button>
+            
         </div>
       </div>
 

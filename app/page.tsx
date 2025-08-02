@@ -18,7 +18,6 @@ const App = () => {
       <AboutSection />
       <ServicesSection />
       <StatsCounter />
-      <GuardSection />
       <ServiceCoverage />
       <BlogSection />
       <ContactSection />
