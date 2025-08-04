@@ -36,7 +36,7 @@ export function BlogSection() {
           <span className="text-[#EF443B] font-semibold tracking-wider uppercase text-sm">
             Security Insights
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-black">
             Latest <span className="text-[#EF443B]">Industry Updates</span>
           </h2>
           <p className="text-xl max-w-2xl mx-auto text-black">

@@ -6,7 +6,7 @@ import ServicesCard from './ui/ServicesCard';
 
 const ServicesSection = () => {
   return (
-    <section className="bg-white py-20 px-6 md:px-12">
+    <section className="bg-white py-20 px-6 md:px-12" id='services'>
            <div className="text-center mb-12 flex flex-col items-center">
         <h2 className="text-4xl font-bold text-[#EF443B]">Our Security Services</h2>
         <p className="text-gray-500 mt-4 text-lg max-w-4xl">
@@ -27,7 +27,7 @@ const ServicesSection = () => {
           description="Trained K9 teams offering superior deterrence and rapid response capabilities. Ideal for patrols, events, and high-risk environments."
           icon={<Dog size={24} className="text-white" />}
           imageUrl="/images/dogUnit.jpg"
-          link="/dog-units"
+          link="/dogUnit"
         />
       </div>
     </section>

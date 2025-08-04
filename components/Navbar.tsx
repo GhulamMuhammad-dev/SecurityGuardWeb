@@ -24,11 +24,10 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '#About', label: 'About' },
-    { href: '/facilities', label: 'Facilities Management' },
-    { href: '/about', label: 'About' },
-    { href: '/recruitment', label: 'Recruitment' },
-    { href: '/resources', label: 'Resources' },
+    { href: '#about', label: 'About' },
+    { href: '#services', label: 'Services' },
+    { href: '#certifications', label: 'Certificates' },
+    { href: '#covarage', label: 'Covarage' },
   ];
 
   return (
@@ -81,7 +80,7 @@ export default function Navbar() {
 
         {/* Quote Button */}
         <Link
-          href="/get-a-quote"
+          href="/contact"
           className="hidden md:flex items-center gap-2 bg-[#EF443B] hover:bg-[#d63c2f] text-white px-4 py-2 rounded-md text-sm"
         >
           <Sparkles size={16} /> Get A Quote
@@ -112,7 +111,7 @@ export default function Navbar() {
           ))}
 
           <Link
-            href="/get-a-quote"
+            href="/contact"
             className="flex items-center gap-2 bg-[#EF443B] text-white px-4 py-2 rounded-md text-sm w-max"
             onClick={() => setMenuOpen(false)}
           >

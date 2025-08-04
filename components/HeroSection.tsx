@@ -55,12 +55,12 @@ export function HeroSection() {
           Trusted Protection for People, Property & Peace of Mind.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="#quote">
+          <Link href="#contact">
             <Button className="bg-[#EF443B] hover:bg-[#C6362E] text-white px-6 py-3 text-base md:text-lg rounded">
               Get a Free Quote
             </Button>
           </Link>
-          <Link href="tel:+4408081962872">
+          <Link href="#contact">
             <Button className="bg-white text-black hover:bg-gray-200 px-6 py-3 text-base md:text-lg rounded">
              Contact Us
             </Button>
