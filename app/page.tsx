@@ -21,7 +21,6 @@ const App = () => {
       <StatsCounter />
       <CertificationsSection />
       <ServiceCoverage />
-      <BlogSection />
       <ContactSection />
       
        {/* <Practice /> */}
