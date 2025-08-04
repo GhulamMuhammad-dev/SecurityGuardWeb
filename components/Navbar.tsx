@@ -1,78 +1,148 @@
 'use client';
+
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  Headphones,
+  User,
+  Sparkles,
+  Menu,
+  X,
+} from 'lucide-react';
+import {
+  FaFacebookF,
+  FaXTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube
+} from 'react-icons/fa6';
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '/security', label: 'Security Services' },
+    { href: '/cleaning', label: 'Cleaning Services' },
+    { href: '/facilities', label: 'Facilities Management' },
+    { href: '/about', label: 'About' },
+    { href: '/recruitment', label: 'Recruitment' },
+    { href: '/resources', label: 'Resources' },
+  ];
 
   return (
-    <>
-      {/* Top emergency bar */}
-
-
-      {/* Centered contact row */}
-      <div className="bg-white text-[#1A1A1A] py-4 px-6 hidden md:flex justify-between items-center shadow">
-        <div className="flex items-center space-x-2 text-2xl font-bold">
-          <span className="text-[#EF443B]">CrossFront</span><span>Services</span>
+    <header className="w-full">
+      {/* Top Bar */}
+      <div className="hidden  bg-[#EF443B] md:bg-[#EF443B] text-white md:text-white text-sm md:flex flex-col md:flex-row justify-between items-center px-4 lg:px-16 py-2 gap-2">
+        <div className="flex items-center gap-3">
+          <a href="#" aria-label="Facebook"><FaFacebookF size={16} /></a>
+          <a href="#" aria-label="X / Twitter"><FaXTwitter size={16} /></a>
+          <a href="#" aria-label="Instagram"><FaInstagram size={16} /></a>
+          <a href="#" aria-label="LinkedIn"><FaLinkedinIn size={16} /></a>
+          <a href="#" aria-label="YouTube"><FaYoutube size={16} /></a>
         </div>
-        <div className="flex items-center gap-10 text-sm">
-          <div className="text-center">
-            <div className="uppercase text-xs font-semibold">Headquarters</div>
-            <div>456 Security Ave, Safe City</div>
+        <div className="flex flex-wrap gap-4 text-xs md:text-sm">
+          <div className="flex items-center gap-1">
+            <Phone size={16} /> <span>Sales: 0808 196 2872</span>
           </div>
-          <div className="text-center">
-            <div className="uppercase text-xs font-semibold">Email Us</div>
-            <div>contact@secureguard.com</div>
+          <div className="flex items-center gap-1">
+            <Headphones size={16} /> <span>Support: 0344 477 9991</span>
           </div>
-          <div className="text-center">
-            <div className="uppercase text-xs font-semibold">Emergency</div>
-            <div>+1 (555) 987-6543</div>
+          <div className="flex items-center gap-1">
+            <Mail size={16} /> <Link href="/contact" className="hover:text-[#EF443B]">Contact Us</Link>
+          </div>
+          <div className="flex items-center gap-1">
+            <User size={16} /> <Link href="/login" className="hover:text-[#EF443B]">Staff & Client Login</Link>
           </div>
         </div>
       </div>
 
-      {/* Navigation over Hero */}
-      <nav className="absolute top-10 md:top-28 left-0 right-0 z-50 px-4 text-white font-medium ">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold md:hidden block">
-            <span className="text-black">CrossFront</span>Services
-          </Link>
+      {/* Main Navbar */}
+      <nav className="bg-white md:bg-white text-black md:text-black px-4 lg:px-16 py-4 flex justify-between items-center relative z-20">
+        {/* Logo */}
+        <Link href="/" className="text-2xl font-bold">
+          <span className="text-[#EF443B]">CrossFront</span>
+          <span className="text-black"> Services</span>
+        </Link>
 
-          <ul className="hidden md:flex gap-8 md:w-full md:items-center md:justify-center text-sm bg-[#1A1A1A]/80 px-8 py-3 rounded-full">
-            <li><Link href="#" className="hover:text-[#EF443B]">Home</Link></li>
-            <li><Link href="#about" className="hover:text-[#EF443B]">About Us</Link></li>
-            <li><Link href="#services" className="hover:text-[#EF443B]">Our Services</Link></li>
-            <li><Link href="#securityteam" className="hover:text-[#EF443B]">Security Team</Link></li>
-            <li><Link href="#available" className="hover:text-[#EF443B]">Available</Link></li>
-            <li><Link href="#blog" className="hover:text-[#EF443B]">Blog</Link></li>
-            <li>
-              <Link href="#contact" className="bg-[#EF443B] text-white px-4 py-2 rounded hover:bg-[#C6362E]">
-                Contact
-              </Link>
-            </li>
-          </ul>
-
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded">
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex gap-6 text-sm">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="hover:text-[#EF443B] transition-colors duration-200"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
-        {isOpen && (
-          <div className="md:hidden mt-4 bg-[#1A1A1A]/90 rounded-lg p-4 space-y-3 text-white">
-            {['Home', 'About', 'Services', 'Security Team', 'Blog', 'Contact'].map((label, i) => (
-              <Link
-                key={i}
-                href={`#${label.toLowerCase().replace(/ /g, '')}`}
-                className="block hover:text-[#EF443B]"
-                onClick={() => setIsOpen(false)}
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-        )}
+        {/* Quote Button */}
+        <Link
+          href="/get-a-quote"
+          className="hidden md:flex items-center gap-2 bg-[#EF443B] hover:bg-[#d63c2f] text-white px-4 py-2 rounded-md text-sm"
+        >
+          <Sparkles size={16} /> Get A Quote
+        </Link>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-black"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </nav>
-    </>
+
+      {/* Mobile Menu Drawer */}
+      {menuOpen && (
+        <div className="bg-black text-white flex flex-col px-6 py-4 space-y-4 md:hidden">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="hover:underline"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+
+          <Link
+            href="/get-a-quote"
+            className="flex items-center gap-2 bg-[#EF443B] text-white px-4 py-2 rounded-md text-sm w-max"
+            onClick={() => setMenuOpen(false)}
+          >
+            <Sparkles size={16} /> Get A Quote
+          </Link>
+
+          {/* Top Bar info in mobile menu */}
+          <div className="pt-4 border-t border-[#EF443B] space-y-2 text-sm">
+            <div className="flex items-center gap-2">
+              <Phone size={16} /> Sales: 0808 196 2872
+            </div>
+            <div className="flex items-center gap-2">
+              <Headphones size={16} /> Support: 0344 477 9991
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail size={16} /> <Link href="/contact">Contact Us</Link>
+            </div>
+            <div className="flex items-center gap-2">
+              <User size={16} /> <Link href="/login">Login</Link>
+            </div>
+            <div className="flex items-center gap-3 pt-2">
+              <FaFacebookF size={16} />
+              <FaXTwitter size={16} />
+              <FaInstagram size={16} />
+              <FaLinkedinIn size={16} />
+              <FaYoutube size={16} />
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

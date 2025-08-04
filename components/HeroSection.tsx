@@ -1,4 +1,5 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,12 +24,14 @@ export function HeroSection() {
 
   return (
     <section className="relative h-screen max-h-[800px] overflow-hidden">
-      {/* Background image layers */}
+      {/* Background images */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((img, index) => (
           <div
             key={img.src}
-            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
           >
             <Image
               src={img.src}
@@ -38,42 +41,42 @@ export function HeroSection() {
               priority={index === 0}
               quality={90}
             />
-            <div className="absolute inset-0 bg-[#EF443B] opacity-60"></div>
+            <div className="absolute inset-0 bg-black/60" />
           </div>
         ))}
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6 py-24 text-white">
-        <h2 className="text-white font-bold text-lg md:text-xl tracking-wide uppercase mb-3">
-          24/7 Monitoring
-        </h2>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mb-6">
-          <span className='text-black'>Reliable</span> <span className="text-white">Protection Services</span>
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 text-white">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-5xl mb-6">
+          Security Beyond the Front Line.
         </h1>
-        <div className="flex flex-wrap justify-center gap-4 mt-4">
-          <Button className="bg-black hover:bg-gray-900 text-white px-8 py-4 text-lg rounded">
-            <Link href="#services">
-               Services
-            </Link>
-          </Button>
-           
-           <Button className="bg-[#EF443B] hover:bg-[#C6362E] text-white px-8 py-4 text-lg rounded">
-            <Link href="#contact">
-                Contact
-            </Link>
+        <p className="text-lg md:text-2xl max-w-3xl text-white/90 mb-8">
+          Trusted Protection for People, Property & Peace of Mind.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link href="#quote">
+            <Button className="bg-[#EF443B] hover:bg-[#C6362E] text-white px-6 py-3 text-base md:text-lg rounded">
+              Get a Free Quote
             </Button>
-            
+          </Link>
+          <Link href="tel:+4408081962872">
+            <Button className="bg-white text-black hover:bg-gray-200 px-6 py-3 text-base md:text-lg rounded">
+             Contact Us
+            </Button>
+          </Link>
         </div>
       </div>
 
       {/* Carousel Dots */}
-      <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center gap-2">
+      <div className="absolute bottom-6 left-0 right-0 z-10 flex justify-center gap-2">
         {heroImages.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentImageIndex(i)}
-            className={`w-3 h-3 rounded-full transition-all ${i === currentImageIndex ? 'bg-[#EF443B] w-6' : 'bg-white/50'}`}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === currentImageIndex ? 'bg-[#EF443B] w-6' : 'bg-white/50'
+            }`}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
