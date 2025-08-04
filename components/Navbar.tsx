@@ -23,8 +23,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '/security', label: 'Security Services' },
-    { href: '/cleaning', label: 'Cleaning Services' },
+    { href: '/', label: 'Home' },
+    { href: '#About', label: 'About' },
     { href: '/facilities', label: 'Facilities Management' },
     { href: '/about', label: 'About' },
     { href: '/recruitment', label: 'Recruitment' },

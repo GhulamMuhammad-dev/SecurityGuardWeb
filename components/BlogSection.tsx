@@ -30,7 +30,7 @@ const blogs = [
 export function BlogSection() {
   return (
     <>
-    <section className="py-28 px-6 bg-[#1A1A1A] text-[#F4F4F4] relative overflow-hidden" id="blog">
+    <section className="py-28 px-6 bg-white text-black relative overflow-hidden" id="blog">
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-[#EF443B] font-semibold tracking-wider uppercase text-sm">
@@ -39,7 +39,7 @@ export function BlogSection() {
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
             Latest <span className="text-[#EF443B]">Industry Updates</span>
           </h2>
-          <p className="text-xl max-w-2xl mx-auto text-[#F4F4F4]/80">
+          <p className="text-xl max-w-2xl mx-auto text-black">
             Expert knowledge and security best practices to help you make informed decisions.
           </p>
         </div>

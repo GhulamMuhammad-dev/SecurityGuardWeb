@@ -1,6 +1,7 @@
 
 import AboutSection from '@/components/AboutSection'
 import { BlogSection } from '@/components/BlogSection'
+import CertificationsSection from '@/components/CertificationsSection'
 import { ContactSection } from '@/components/ContactSection'
 import GuardSection from '@/components/GuardsSection'
 import { HeroSection } from '@/components/HeroSection'
@@ -18,6 +19,7 @@ const App = () => {
       <AboutSection />
       <ServicesSection />
       <StatsCounter />
+      <CertificationsSection />
       <ServiceCoverage />
       <BlogSection />
       <ContactSection />
