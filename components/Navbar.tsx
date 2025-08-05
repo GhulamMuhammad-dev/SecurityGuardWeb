@@ -1,33 +1,26 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import {
-  Mail,
-  Phone,
-  Headphones,
-  User,
-  Sparkles,
-  Menu,
-  X,
-} from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { Mail, Phone, Headphones, User, Sparkles, Menu, X } from "lucide-react";
 import {
   FaFacebookF,
   FaXTwitter,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube
-} from 'react-icons/fa6';
+  FaYoutube,
+} from "react-icons/fa6";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#certifications', label: 'Certificates' },
-    { href: '#covarage', label: 'Covarage' },
+    { href: "/", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#certifications", label: "Certificates" },
+    { href: "#covarage", label: "Covarage" },
   ];
 
   return (
@@ -35,11 +28,21 @@ export default function Navbar() {
       {/* Top Bar */}
       <div className="hidden  bg-[#EF443B] md:bg-[#EF443B] text-white md:text-white text-sm md:flex flex-col md:flex-row justify-between items-center px-4 lg:px-16 py-2 gap-2">
         <div className="flex items-center gap-3">
-          <a href="#" aria-label="Facebook"><FaFacebookF size={16} /></a>
-          <a href="#" aria-label="X / Twitter"><FaXTwitter size={16} /></a>
-          <a href="#" aria-label="Instagram"><FaInstagram size={16} /></a>
-          <a href="#" aria-label="LinkedIn"><FaLinkedinIn size={16} /></a>
-          <a href="#" aria-label="YouTube"><FaYoutube size={16} /></a>
+          <a href="#" aria-label="Facebook">
+            <FaFacebookF size={16} />
+          </a>
+          <a href="#" aria-label="X / Twitter">
+            <FaXTwitter size={16} />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <FaInstagram size={16} />
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <FaLinkedinIn size={16} />
+          </a>
+          <a href="#" aria-label="YouTube">
+            <FaYoutube size={16} />
+          </a>
         </div>
         <div className="flex flex-wrap gap-4 text-xs md:text-sm">
           <div className="flex items-center gap-1">
@@ -49,10 +52,16 @@ export default function Navbar() {
             <Headphones size={16} /> <span>Support: 0344 477 9991</span>
           </div>
           <div className="flex items-center gap-1">
-            <Mail size={16} /> <Link href="/contact" className="hover:text-[#EF443B]">Contact Us</Link>
+            <Mail size={16} />{" "}
+            <Link href="/contact" className="hover:text-[#EF443B]">
+              Contact Us
+            </Link>
           </div>
           <div className="flex items-center gap-1">
-            <User size={16} /> <Link href="/login" className="hover:text-[#EF443B]">Staff & Client Login</Link>
+            <User size={16} />{" "}
+            <Link href="/login" className="hover:text-[#EF443B]">
+              Staff & Client Login
+            </Link>
           </div>
         </div>
       </div>
@@ -60,9 +69,16 @@ export default function Navbar() {
       {/* Main Navbar */}
       <nav className="bg-white md:bg-white text-black md:text-black px-4 lg:px-16 py-4 flex justify-between items-center relative z-20">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold">
-          <span className="text-[#EF443B]">CrossFront</span>
-          <span className="text-black"> Services</span>
+        <Link href="/" className="text-2xl font-bold flex items-center">
+          <Image
+          width={60}
+          height={60}
+          src="/images/LogocrossService.png"
+          alt="CrossFront logo"
+          className="object-cover rounded-2xl"
+        />
+          {/* <span className="text-[#EF443B]">CrossFront</span>
+          <span className="text-black"> Services</span> */}
         </Link>
 
         {/* Desktop Nav Links */}
