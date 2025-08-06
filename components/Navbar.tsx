@@ -161,7 +161,7 @@ export default function Navbar() {
             {servicesData.map((service) => (
               <Link
                 key={service.slug}
-                href={`/services/${service.slug}`}
+                href={`/serviceInfo/${service.slug}`}
                 className="block py-1 pl-2 text-sm hover:text-primary-color cursor-pointer"
                 onClick={() => setMenuOpen(false)}
               >
