@@ -38,7 +38,7 @@ const cities = [
 
 const ServiceCoverage = () => {
   return (
-    <section className="bg-gray-100 py-16 px-4 sm:px-8 lg:px-16" id='covarage'>
+    <section className="bg-gray-100 py-16 px-4 sm:px-8 lg:px-16" id="coverage">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">Nationwide Service Coverage</h2>
         <p className="text-gray-600 mt-4 text-lg">
@@ -46,11 +46,11 @@ const ServiceCoverage = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {cities.map((city) => (
           <div
             key={city.name}
-            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border-2 border-[#EF443B]"
+            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border-2 border-primary-color"
           >
             <div className="relative h-48 w-full">
               <Image
@@ -61,7 +61,7 @@ const ServiceCoverage = () => {
               />
             </div>
             <div className="p-5">
-              <h3 className="text-xl font-semibold text-[#EF443B]">{city.name}</h3>
+              <h3 className="text-xl font-semibold text-primary-color">{city.name}</h3>
               <p className="text-gray-600 mt-2">{city.desc}</p>
             </div>
           </div>

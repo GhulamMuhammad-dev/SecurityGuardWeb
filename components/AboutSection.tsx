@@ -23,16 +23,18 @@ const AboutSection = () => {
         {/* Text Content */}
         <div className="w-full md:w-1/2 space-y-6">
           <h2 className="text-4xl font-bold leading-tight">
-            About <span className="text-[#EF443B]">CrossFront Services</span>
+            About{" "}
+            <span className="text-primary-color">CrossFront Services</span>
           </h2>
 
           <p className="text-gray-700 text-lg leading-relaxed">
             At CrossFront Services, we stand at the forefront of professional
             security. With years of experience and a commitment to excellence,
             we provide tailored protection solutions for businesses, events,
-            properties, and individuals across <strong>[your region]</strong>.
-            Our highly trained personnel, cutting-edge systems, and proactive
-            approach make us the trusted partner for all your security needs.
+            properties, and individuals across{" "}
+            <strong>[your region]</strong>. Our highly trained personnel,
+            cutting-edge systems, and proactive approach make us the trusted
+            partner for all your security needs.
           </p>
 
           <p className="text-gray-700 text-lg leading-relaxed">
@@ -44,7 +46,7 @@ const AboutSection = () => {
           <div className="pt-4">
             <a
               href="/about"
-              className="inline-block bg-[#EF443B] hover:bg-[#C6362E] text-white px-6 py-3 rounded-lg font-semibold transition duration-300"
+              className="inline-block bg-primary-color hover:bg-primary-color-hover text-white px-6 py-3 rounded-lg font-semibold transition duration-300"
             >
               Learn More About Us →
             </a>

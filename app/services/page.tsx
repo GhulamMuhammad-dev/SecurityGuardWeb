@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from "react";
 import Image from "next/image";
@@ -8,7 +8,7 @@ const services = [
   {
     title: "Manned Guarding",
     description: "Trained and licensed personnel ensuring safety at all times for businesses, events, and private premises.",
-    image: "/images/securityImg1.webp", // Replace with your image
+    image: "/images/securityImg1.webp",
   },
   {
     title: "Mobile Patrols",
@@ -26,8 +26,8 @@ const services = [
     image: "/images/k9Dog.jpg",
   },
   {
-    title: "Alarm Response",
-    description: "Immediate response to triggered alarms, ensuring threats are neutralized quickly and effectively.",
+    title: "Key Holding",
+    description: "Secure key management and rapid dispatch when alarms are triggered—ensuring peace of mind around the clock.",
     image: "/images/securityImg2.webp",
   },
   {
@@ -39,14 +39,14 @@ const services = [
 
 const ServicesPage = () => {
   return (
-    <main className="bg-[#0D0D0D] text-white px-6 py-20 md:px-20">
+    <main className="bg-white text-black px-6 py-20 md:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Our Specialist Security Services
           </h1>
-          <p className="text-[#CCCCCC] max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Comprehensive protection delivered by trained professionals using modern surveillance, planning, and on-ground execution.
           </p>
         </header>
@@ -56,7 +56,7 @@ const ServicesPage = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-[#1A1A1A] border-2 border-[#EF443B] rounded-xl overflow-hidden shadow-lg group transition-transform hover:-translate-y-1 hover:shadow-xl"
+              className="bg-white border-2 border-primary-color rounded-xl overflow-hidden shadow-lg group transition-transform hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative w-full h-56">
                 <Image
@@ -67,10 +67,10 @@ const ServicesPage = () => {
                 />
               </div>
               <div className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold group-hover:text-[#EF443B] transition-colors">
+                <h3 className="text-xl font-semibold group-hover:text-primary-color transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-[#CCCCCC] text-sm">{service.description}</p>
+                <p className="text-gray-700 text-sm">{service.description}</p>
               </div>
             </div>
           ))}
@@ -80,7 +80,7 @@ const ServicesPage = () => {
         <div className="mt-20 text-center">
           <Link
             href="/contact"
-            className="inline-block bg-[#EF443B] hover:bg-[#C6362E] transition duration-300 px-6 py-3 rounded-lg text-white font-semibold"
+            className="inline-block bg-primary-color hover:bg-primary-color-hover transition duration-300 px-6 py-3 rounded-lg text-white font-semibold"
           >
             Contact Us for a Custom Quote →
           </Link>

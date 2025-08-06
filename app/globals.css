@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-primary-color:var(--primary-color);
+  --color-primary-color-hover:var(--primary-color-hover);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -44,6 +46,8 @@
 }
 
 :root {
+  --primary-color:#4895ef;
+  --primary-color-hover: #3f80cb;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

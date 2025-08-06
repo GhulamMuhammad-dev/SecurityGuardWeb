@@ -1,18 +1,23 @@
 import { Button } from "@/components/ui/button";
 
-const Contact=()=> {
+const Contact = () => {
   return (
-    <section className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937] relative overflow-hidden" id="contact">
+    <section
+      className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937] relative overflow-hidden"
+      id="contact"
+    >
       <div className="relative max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-[#EF443B] font-semibold tracking-wider uppercase text-sm">
+          <span className="text-primary-color font-semibold tracking-wider uppercase text-sm">
             Get in Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Let&apos;s Secure What <span className="text-[#EF443B]">Matters Most</span>
+            Let&apos;s Secure What{" "}
+            <span className="text-primary-color">Matters Most</span>
           </h2>
           <p className="text-xl max-w-2xl mx-auto text-[#6B7280]">
-            Our security experts are available 24/7 to discuss your unique protection needs.
+            Our security experts are available 24/7 to discuss your unique
+            protection needs.
           </p>
         </div>
 
@@ -26,7 +31,7 @@ const Contact=()=> {
                 id="name"
                 type="text"
                 placeholder="John Smith"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
                 required
               />
             </div>
@@ -39,7 +44,7 @@ const Contact=()=> {
                 id="company"
                 type="text"
                 placeholder="Acme Corporation"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
               />
             </div>
           </div>
@@ -53,7 +58,7 @@ const Contact=()=> {
                 id="email"
                 type="email"
                 placeholder="john@example.com"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
                 required
               />
             </div>
@@ -66,7 +71,7 @@ const Contact=()=> {
                 id="phone"
                 type="tel"
                 placeholder="+44 7700 900123"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
                 required
               />
             </div>
@@ -78,15 +83,16 @@ const Contact=()=> {
             </label>
             <select
               id="service"
-              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] appearance-none transition-all"
+              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] appearance-none transition-all"
               required
             >
               <option value="">Select a service</option>
-              <option value="static">Static Guarding</option>
+              <option value="manned">Manned Guarding</option>
               <option value="mobile">Mobile Patrols</option>
-              <option value="construction">Construction Site Security</option>
               <option value="event">Event Security</option>
-              <option value="other">Other Security Needs</option>
+              <option value="k9">K9 Dog Units</option>
+              <option value="keyholding">Key Holding Service</option>
+              <option value="construction">Construction Site Security</option>
             </select>
           </div>
 
@@ -98,7 +104,7 @@ const Contact=()=> {
               id="message"
               rows={4}
               placeholder="Tell us about your security requirements..."
-              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
               required
             ></textarea>
           </div>
@@ -106,7 +112,7 @@ const Contact=()=> {
           <div className="pt-4">
             <Button
               type="submit"
-              className="w-full bg-[#EF443B] hover:bg-[#C6362E] text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
+              className="w-full bg-primary-color hover:bg-primary-color-hover text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
             >
               Request Security Consultation
             </Button>
@@ -119,6 +125,6 @@ const Contact=()=> {
       </div>
     </section>
   );
-}
+};
 
-export default Contact
+export default Contact;

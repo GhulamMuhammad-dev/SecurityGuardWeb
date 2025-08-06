@@ -18,8 +18,6 @@ const App = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <StatsCounter />
-      <CertificationsSection />
       <ServiceCoverage />
       <ContactSection />
       

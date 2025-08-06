@@ -56,13 +56,15 @@ export function HeroSection() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="#contact">
-            <Button className="bg-[#EF443B] hover:bg-[#C6362E] text-white px-6 py-3 text-base md:text-lg rounded">
+            <Button
+              className="bg-primary-color hover:bg-primary-color-hover text-white px-6 py-3 text-base md:text-lg rounded"
+            >
               Get a Free Quote
             </Button>
           </Link>
           <Link href="#contact">
             <Button className="bg-white text-black hover:bg-gray-200 px-6 py-3 text-base md:text-lg rounded">
-             Contact Us
+              Contact Us
             </Button>
           </Link>
         </div>
@@ -74,8 +76,10 @@ export function HeroSection() {
           <button
             key={i}
             onClick={() => setCurrentImageIndex(i)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              i === currentImageIndex ? 'bg-[#EF443B] w-6' : 'bg-white/50'
+            className={`h-3 rounded-full transition-all duration-300 ${
+              i === currentImageIndex
+                ? 'bg-primary-color w-6'
+                : 'bg-blue-500 w-3'
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />

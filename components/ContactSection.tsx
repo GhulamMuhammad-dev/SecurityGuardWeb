@@ -1,15 +1,20 @@
+'use client';
+
 import { Button } from "./ui/button";
 
 export function ContactSection() {
   return (
-    <section className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937] relative overflow-hidden" id="contact">
+    <section
+      className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937] relative overflow-hidden"
+      id="contact"
+    >
       <div className="relative max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-[#EF443B] font-semibold tracking-wider uppercase text-sm">
+          <span className="text-primary-color font-semibold tracking-wider uppercase text-sm">
             Get in Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Let&apos;s Secure What <span className="text-[#EF443B]">Matters Most</span>
+            Let&apos;s Secure What <span className="text-primary-color">Matters Most</span>
           </h2>
           <p className="text-xl max-w-2xl mx-auto text-[#6B7280]">
             Our security experts are available 24/7 to discuss your unique protection needs.
@@ -26,7 +31,7 @@ export function ContactSection() {
                 id="name"
                 type="text"
                 placeholder="John Smith"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
                 required
               />
             </div>
@@ -39,7 +44,7 @@ export function ContactSection() {
                 id="company"
                 type="text"
                 placeholder="Acme Corporation"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
               />
             </div>
           </div>
@@ -53,7 +58,7 @@ export function ContactSection() {
                 id="email"
                 type="email"
                 placeholder="john@example.com"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
                 required
               />
             </div>
@@ -66,7 +71,7 @@ export function ContactSection() {
                 id="phone"
                 type="tel"
                 placeholder="+44 7700 900123"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
                 required
               />
             </div>
@@ -78,7 +83,7 @@ export function ContactSection() {
             </label>
             <select
               id="service"
-              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] appearance-none transition-all"
+              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] appearance-none transition-all"
               required
             >
               <option value="">Select a service</option>
@@ -98,7 +103,7 @@ export function ContactSection() {
               id="message"
               rows={4}
               placeholder="Tell us about your security requirements..."
-              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-[#EF443B] focus:ring-2 focus:ring-[#EF443B]/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
               required
             ></textarea>
           </div>
@@ -106,7 +111,7 @@ export function ContactSection() {
           <div className="pt-4">
             <Button
               type="submit"
-              className="w-full bg-[#EF443B] hover:bg-[#C6362E] text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
+              className="w-full bg-primary-color hover:bg-primary-color-hover text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
             >
               Request Security Consultation
             </Button>
