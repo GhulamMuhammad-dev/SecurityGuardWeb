@@ -111,7 +111,7 @@ export function ContactSection() {
           <div className="pt-4">
             <Button
               type="submit"
-              className="w-full bg-primary-color hover:bg-primary-color-hover text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
+              className=" cursor-pointer w-full bg-primary-color hover:bg-primary-color-hover text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
             >
               Request Security Consultation
             </Button>

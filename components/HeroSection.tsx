@@ -57,13 +57,13 @@ export function HeroSection() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/online-quote">
             <Button
-              className="bg-primary-color hover:bg-primary-color-hover text-white px-6 py-3 text-base md:text-lg rounded"
+              className="bg-primary-color hover:bg-primary-color-hover text-white px-6 py-3 text-base md:text-lg rounded cursor-pointer"
             >
               Get a Free Quote
             </Button>
           </Link>
           <Link href="#contact">
-            <Button className="bg-white text-black hover:bg-gray-200 px-6 py-3 text-base md:text-lg rounded">
+            <Button className="bg-white text-black hover:bg-gray-200 px-6 py-3 text-base md:text-lg rounded cursor-pointer">
               Contact Us
             </Button>
           </Link>
