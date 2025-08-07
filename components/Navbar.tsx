@@ -174,7 +174,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/contact"
+            href="/online-quote"
             className="flex items-center gap-2 bg-primary-color hover:bg-primary-color-hover text-white px-4 py-2 rounded-md text-sm w-max cursor-pointer"
             onClick={() => setMenuOpen(false)}
           >
