@@ -55,7 +55,7 @@ export function HeroSection() {
           Trusted Protection for People, Property & Peace of Mind.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="#contact">
+          <Link href="/online-quote">
             <Button
               className="bg-primary-color hover:bg-primary-color-hover text-white px-6 py-3 text-base md:text-lg rounded"
             >

@@ -79,7 +79,7 @@ const ServicesPage = () => {
         {/* CTA */}
         <div className="mt-20 text-center">
           <Link
-            href="/contact"
+            href="/online-quote"
             className="inline-block bg-primary-color hover:bg-primary-color-hover transition duration-300 px-6 py-3 rounded-lg text-white font-semibold"
           >
             Contact Us for a Custom Quote →

@@ -48,7 +48,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
         {/* CTA */}
         <div className="mt-16 text-center">
           <Link
-            href="/contact"
+            href="/online-quote"
             className="inline-block bg-primary-color hover:bg-primary-color-hover text-white px-6 py-3 rounded-lg font-semibold"
           >
             Request {service.title} →

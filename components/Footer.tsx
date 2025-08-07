@@ -24,7 +24,7 @@ export function Footer() {
               Trusted nationwide for corporate, event, and asset protection.
               Delivering professional security services since 2010.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <SocialIcon href="#" label="Facebook">
                 <FacebookIcon className="w-5 h-5" />
               </SocialIcon>
@@ -34,7 +34,7 @@ export function Footer() {
               <SocialIcon href="#" label="LinkedIn">
                 <LinkedInIcon className="w-5 h-5" />
               </SocialIcon>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}

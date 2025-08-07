@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-primary-color:var(--primary-color);
-  --color-primary-color-hover:var(--primary-color-hover);
+  --color-primary-color: var(--primary-color);
+  --color-primary-color-hover: var(--primary-color-hover);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -46,7 +46,7 @@
 }
 
 :root {
-  --primary-color:#4895ef;
+  --primary-color: #4895ef;
   --primary-color-hover: #3f80cb;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -122,5 +122,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .input {
+    @apply border border-gray-300 px-4 py-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-primary-color;
   }
 }

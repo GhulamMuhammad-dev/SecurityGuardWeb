@@ -82,7 +82,7 @@ export default function Navbar() {
             </button>
             {aboutDropdownOpen && (
               <div className="absolute top-4 left-0 bg-white text-black shadow-lg rounded-md mt-2 w-60 z-50 ">
-                <Link href="/about/mission" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Mission Statement</Link>
+                <Link href="/about" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Mission Statement</Link>
                 <Link href="/about/environment" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Environmental Policy</Link>
                 <Link href="/about/health-and-safety" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Health & Safety Policy</Link>
                 <Link href="/about/quality" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Quality Policy</Link>
@@ -118,7 +118,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <Link
-          href="/contact"
+          href="/online-quote"
           className="hidden md:flex items-center gap-2 bg-primary-color hover:bg-primary-color-hover text-white px-4 py-2 rounded-md text-sm cursor-pointer"
         >
           <Sparkles size={16} /> Get A Quote
