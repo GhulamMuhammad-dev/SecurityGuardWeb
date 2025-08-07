@@ -36,6 +36,7 @@ export default function Navbar() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
 
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "#covarage", label: "Coverage" },
@@ -46,18 +47,20 @@ export default function Navbar() {
     <header className="w-full">
       <nav className="bg-white text-black px-4 lg:px-16 py-4 flex justify-between items-center relative z-20">
         {/* Logo */}
+  
         <Link href="/" className="text-2xl font-bold flex items-center cursor-pointer">
           <Image
             width={60}
             height={60}
-            src="/images/LogocrossService.png"
+            src="/images/crossfrontLogo.jpg"
             alt="CrossFront logo"
             className="object-cover rounded-2xl"
           />
         </Link>
+        
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-6 text-sm items-center">
+        <div className="hidden md:flex gap-6 text-md items-center">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -72,13 +75,13 @@ export default function Navbar() {
           <div
             className="relative group"
             onMouseEnter={() => setAboutDropdownOpen(true)}
-            onMouseLeave={() => setAboutDropdownOpen(false)}
+            onMouseLeave={()=>setAboutDropdownOpen(false)}
           >
             <button className="flex items-center gap-1 hover:text-primary-color cursor-pointer">
               About <ChevronDown size={16} />
             </button>
             {aboutDropdownOpen && (
-              <div className="absolute top-full left-0 bg-white text-black shadow-lg rounded-md mt-2 w-60 z-50">
+              <div className="absolute top-4 left-0 bg-white text-black shadow-lg rounded-md mt-2 w-60 z-50 ">
                 <Link href="/about/mission" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Mission Statement</Link>
                 <Link href="/about/environment" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Environmental Policy</Link>
                 <Link href="/about/health-and-safety" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Health & Safety Policy</Link>
@@ -92,13 +95,13 @@ export default function Navbar() {
           <div
             className="relative group"
             onMouseEnter={() => setServicesDropdownOpen(true)}
-            onMouseLeave={() => setServicesDropdownOpen(false)}
+            onMouseLeave={()=>setServicesDropdownOpen(false)}
           >
             <button className="flex items-center gap-1 hover:text-primary-color cursor-pointer">
               Services <ChevronDown size={16} />
             </button>
             {servicesDropdownOpen && (
-              <div className="absolute top-full left-0 bg-white text-black shadow-lg rounded-md mt-2 w-64 z-50">
+              <div className="absolute top-4 left-0 bg-white text-black shadow-lg rounded-md mt-2 w-64 z-50">
                 {servicesData.map((service) => (
                   <Link
                     key={service.slug}

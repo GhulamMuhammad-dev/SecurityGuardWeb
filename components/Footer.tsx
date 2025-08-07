@@ -13,7 +13,7 @@ export function Footer() {
                 <Image
                   width={60}
                   height={60}
-                  src="/images/LogocrossService.png"
+                  src="/images/crossfrontLogo.jpg"
                   alt="CrossFront logo"
                   className="object-cover rounded-2xl"
                 />
