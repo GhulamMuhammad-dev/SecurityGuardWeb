@@ -49,7 +49,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="email" className="block text-sm font-medium">
                 Email Address *
@@ -75,7 +75,7 @@ export function ContactSection() {
                 required
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="space-y-2">
             <label htmlFor="service" className="block text-sm font-medium">
@@ -87,9 +87,11 @@ export function ContactSection() {
               required
             >
               <option value="">Select a service</option>
-              <option value="static">Static Guarding</option>
+              <option value="static">Manned Guarding</option>
               <option value="mobile">Mobile Patrols</option>
               <option value="construction">Construction Site Security</option>
+              <option value="k9">K9 Dog Units</option>
+              <option value="key">Key Holding Service</option>
               <option value="event">Event Security</option>
               <option value="other">Other Security Needs</option>
             </select>

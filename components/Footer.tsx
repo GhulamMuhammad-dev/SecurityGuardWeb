@@ -22,7 +22,7 @@ export function Footer() {
             </div>
             <p className="text-sm mb-4">
               Trusted nationwide for corporate, event, and asset protection.
-              Delivering professional security services since 2010.
+              Delivering professional security services.
             </p>
             {/* <div className="flex gap-4">
               <SocialIcon href="#" label="Facebook">
@@ -43,11 +43,11 @@ export function Footer() {
             <FooterLinkList
               links={[
                 { label: "Home", href: "/" },
-                { label: "Mission Statement", href: "/about/mission" },
-                { label: "Environmental Policy", href: "/environmental-policy" },
-                { label: "Health & Safety", href: "/health-safety-policy" },
-                { label: "Quality Policy", href: "/quality-policy" },
-                { label: "FAQ", href: "/faq" },
+                { label: "Mission Statement", href: "/about"},
+                { label: "Environmental Policy", href: "/about/environment" },
+                { label: "Health & Safety", href: "/about/health-and-safety" },
+                { label: "Quality Policy", href: "/about/quality" },
+                { label: "FAQ", href: "/about/faq" },
                 { label: "Contact", href: "/contact" },
               ]}
             />
@@ -74,7 +74,7 @@ export function Footer() {
             <address className="not-italic text-sm space-y-3">
               <ContactItem icon={<MapPinIcon />} text="456 Shield Lane, London, UK" />
               <ContactItem icon={<PhoneIcon />} text={<a href="tel:+442033221100">+44 20 3322 1100</a>} />
-              <ContactItem icon={<MailIcon />} text={<a href="mailto:info@crossfrontservices.co.uk">info@crossfrontservices.co.uk</a>} />
+              <ContactItem icon={<MailIcon />} text={<a href="mailto:info@crossfrontservices.co.uk">info@crossfrontservices.com</a>} />
               <ContactItem icon={<ClockIcon />} text="24/7 Response Nationwide" />
             </address>
           </div>

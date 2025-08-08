@@ -80,8 +80,6 @@ export const services: Service[] = [
         "Our K9 units combine highly trained security dogs and licensed handlers to proactively patrol and detect threats.",
       features: [
         "Intruder detection patrols",
-        "Search & locate missions",
-        "Explosives & narcotics detection",
         "Crowd & crowd control deployment",
       ],
       outro:

@@ -50,7 +50,7 @@ const AboutPage = () => {
           <div className="bg-[#1A1A1A] p-8 rounded-xl shadow">
             <h3 className="text-xl font-bold text-primary-color mb-4">Our Vision</h3>
             <p className="text-[#CCCCCC] leading-relaxed">
-              To become the UK&apos;s most trusted and respected private security firm—recognized for our people, our technology, and our impact.
+              To become the UK&apos;s most trusted and respected private security firm recognized for our people, and our impact.
             </p>
           </div>
         </section>
@@ -61,7 +61,6 @@ const AboutPage = () => {
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left text-black text-base">
             <li className="border-primary-color border-2 p-6 rounded-xl">✅ SIA-Licensed Professionals</li>
             <li className="border-primary-color border-2 p-6 rounded-xl">✅ 24/7 Operations & Rapid Response</li>
-            <li className="border-primary-color border-2 p-6 rounded-xl">✅ Cutting-edge Surveillance Systems</li>
             <li className="border-primary-color border-2 p-6 rounded-xl">✅ Nationwide Coverage Across the UK</li>
             <li className="border-primary-color border-2 p-6 rounded-xl">✅ K9 Dog Units & Mobile Patrols</li>
           </ul>
