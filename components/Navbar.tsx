@@ -48,11 +48,8 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6 text-md items-center">
-          {/* Home */}
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/" className="hover:text-primary-color cursor-pointer">
-              Home
-            </Link>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link href="/" className="hover:text-primary-color">Home</Link>
           </motion.div>
 
           {/* About Dropdown */}
@@ -61,10 +58,7 @@ export default function Navbar() {
             onMouseEnter={() => setAboutDropdownOpen(true)}
             onMouseLeave={() => setAboutDropdownOpen(false)}
           >
-            <motion.button
-              className="flex items-center gap-1 hover:text-primary-color cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-            >
+            <motion.button className="flex items-center gap-1 hover:text-primary-color">
               About <ChevronDown size={16} />
             </motion.button>
             <AnimatePresence>
@@ -75,21 +69,11 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                 >
-                  <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">
-                    Mission Statement
-                  </Link>
-                  <Link href="/about/environment" className="block px-4 py-2 hover:bg-gray-100">
-                    Environmental Policy
-                  </Link>
-                  <Link href="/about/health-and-safety" className="block px-4 py-2 hover:bg-gray-100">
-                    Health & Safety Policy
-                  </Link>
-                  <Link href="/about/quality" className="block px-4 py-2 hover:bg-gray-100">
-                    Quality Policy
-                  </Link>
-                  <Link href="/about/faq" className="block px-4 py-2 hover:bg-gray-100">
-                    FAQ
-                  </Link>
+                  <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">Mission Statement</Link>
+                  <Link href="/about/environment" className="block px-4 py-2 hover:bg-gray-100">Environmental Policy</Link>
+                  <Link href="/about/health-and-safety" className="block px-4 py-2 hover:bg-gray-100">Health & Safety Policy</Link>
+                  <Link href="/about/quality" className="block px-4 py-2 hover:bg-gray-100">Quality Policy</Link>
+                  <Link href="/about/faq" className="block px-4 py-2 hover:bg-gray-100">FAQ</Link>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -101,10 +85,7 @@ export default function Navbar() {
             onMouseEnter={() => setServicesDropdownOpen(true)}
             onMouseLeave={() => setServicesDropdownOpen(false)}
           >
-            <motion.button
-              className="flex items-center gap-1 hover:text-primary-color cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-            >
+            <motion.button className="flex items-center gap-1 hover:text-primary-color">
               Services <ChevronDown size={16} />
             </motion.button>
             <AnimatePresence>
@@ -129,26 +110,20 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          {/* Coverage */}
           <motion.div whileHover={{ scale: 1.05 }}>
-            <Link href="#coverage" className="hover:text-primary-color cursor-pointer">
-              Coverage
-            </Link>
+            <Link href="#coverage" className="hover:text-primary-color">Coverage</Link>
           </motion.div>
 
-          {/* Online Quote */}
           <motion.div whileHover={{ scale: 1.05 }}>
-            <Link href="/online-quote" className="hover:text-primary-color cursor-pointer">
-              Online Quote
-            </Link>
+            <Link href="/online-quote" className="hover:text-primary-color">Online Quote</Link>
           </motion.div>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <motion.div className="hidden md:flex" whileHover={{ scale: 1.05 }}>
           <Link
             href="/online-quote"
-            className="flex items-center gap-2 bg-primary-color hover:bg-primary-color-hover text-white px-4 py-2 rounded-md text-sm cursor-pointer"
+            className="flex items-center gap-2 bg-primary-color hover:bg-primary-color-hover text-white px-4 py-2 rounded-md text-sm"
           >
             <Sparkles size={16} /> Get A Quote
           </Link>
@@ -156,12 +131,65 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <motion.button
-          className="md:hidden text-black cursor-pointer"
+          className="md:hidden text-black"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </motion.button>
       </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="md:hidden bg-white shadow-lg px-6 py-4 space-y-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+          >
+            <Link href="/" onClick={() => setMenuOpen(false)} className="block">Home</Link>
+
+            {/* About */}
+            <details className="border-t border-gray-200 pt-2">
+              <summary className="cursor-pointer">About</summary>
+              <div className="pl-4 pt-2 space-y-2">
+                <Link href="/about" onClick={() => setMenuOpen(false)}>Mission Statement</Link>
+                <Link href="/about/environment" onClick={() => setMenuOpen(false)}>Environmental Policy</Link>
+                <Link href="/about/health-and-safety" onClick={() => setMenuOpen(false)}>Health & Safety Policy</Link>
+                <Link href="/about/quality" onClick={() => setMenuOpen(false)}>Quality Policy</Link>
+                <Link href="/about/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+              </div>
+            </details>
+
+            {/* Services */}
+            <details className="border-t border-gray-200 pt-2">
+              <summary className="cursor-pointer">Services</summary>
+              <div className="pl-4 pt-2 space-y-2">
+                {servicesData.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/serviceInfo/${service.slug}`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
+            </details>
+
+            <Link href="#coverage" onClick={() => setMenuOpen(false)}>Coverage</Link>
+            <Link href="/online-quote" onClick={() => setMenuOpen(false)}>Online Quote</Link>
+
+            <Link
+              href="/online-quote"
+              onClick={() => setMenuOpen(false)}
+              className="block bg-primary-color text-white text-center px-4 py-2 rounded-md"
+            >
+              Get A Quote
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
