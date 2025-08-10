@@ -139,57 +139,82 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className="md:hidden bg-white shadow-lg px-6 py-4 space-y-4"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-          >
-            <Link href="/" onClick={() => setMenuOpen(false)} className="block">Home</Link>
+     {/* Mobile Menu */}
+<AnimatePresence>
+  {menuOpen && (
+    <motion.div
+      className="fixed inset-0 z-40 bg-white/95 backdrop-blur-md p-6 flex flex-col"
+      initial={{ x: "100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "100%" }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      {/* Close Button */}
+      <div className="flex justify-end mb-6">
+        <button onClick={() => setMenuOpen(false)}>
+          <X size={28} className="text-black" />
+        </button>
+      </div>
 
-            {/* About */}
-            <details className="border-t border-gray-200 pt-2">
-              <summary className="cursor-pointer">About</summary>
-              <div className="pl-4 pt-2 space-y-2">
-                <Link href="/about" onClick={() => setMenuOpen(false)}>Mission Statement</Link>
-                <Link href="/about/environment" onClick={() => setMenuOpen(false)}>Environmental Policy</Link>
-                <Link href="/about/health-and-safety" onClick={() => setMenuOpen(false)}>Health & Safety Policy</Link>
-                <Link href="/about/quality" onClick={() => setMenuOpen(false)}>Quality Policy</Link>
-                <Link href="/about/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
-              </div>
-            </details>
+      {/* Menu Links */}
+      <div className="flex flex-col gap-6 text-lg font-medium text-black flex-1 overflow-y-auto">
+        <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-primary-color">
+          Home
+        </Link>
 
-            {/* Services */}
-            <details className="border-t border-gray-200 pt-2">
-              <summary className="cursor-pointer">Services</summary>
-              <div className="pl-4 pt-2 space-y-2">
-                {servicesData.map((service) => (
-                  <Link
-                    key={service.slug}
-                    href={`/serviceInfo/${service.slug}`}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {service.title}
-                  </Link>
-                ))}
-              </div>
-            </details>
+        {/* About Accordion */}
+        <details className="group">
+          <summary className="flex justify-between items-center cursor-pointer hover:text-primary-color">
+            About <ChevronDown size={18} className="transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="pl-4 mt-3 flex flex-col gap-3 text-sm">
+            <Link href="/about" onClick={() => setMenuOpen(false)}>Mission Statement</Link>
+            <Link href="/about/environment" onClick={() => setMenuOpen(false)}>Environmental Policy</Link>
+            <Link href="/about/health-and-safety" onClick={() => setMenuOpen(false)}>Health & Safety Policy</Link>
+            <Link href="/about/quality" onClick={() => setMenuOpen(false)}>Quality Policy</Link>
+            <Link href="/about/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+          </div>
+        </details>
 
-            <Link href="#coverage" onClick={() => setMenuOpen(false)}>Coverage</Link>
-            <Link href="/online-quote" onClick={() => setMenuOpen(false)}>Online Quote</Link>
+        {/* Services Accordion */}
+        <details className="group">
+          <summary className="flex justify-between items-center cursor-pointer hover:text-primary-color">
+            Services <ChevronDown size={18} className="transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="pl-4 mt-3 flex flex-col gap-3 text-sm">
+            {servicesData.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/serviceInfo/${service.slug}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {service.title}
+              </Link>
+            ))}
+          </div>
+        </details>
 
-            <Link
-              href="/online-quote"
-              onClick={() => setMenuOpen(false)}
-              className="block bg-primary-color text-white text-center px-4 py-2 rounded-md"
-            >
-              Get A Quote
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        <Link href="#coverage" onClick={() => setMenuOpen(false)} className="hover:text-primary-color">
+          Coverage
+        </Link>
+        <Link href="/online-quote" onClick={() => setMenuOpen(false)} className="hover:text-primary-color">
+          Online Quote
+        </Link>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-6">
+        <Link
+          href="/online-quote"
+          onClick={() => setMenuOpen(false)}
+          className="block w-full bg-primary-color hover:bg-primary-color-hover text-white text-center py-3 rounded-xl font-semibold"
+        >
+          Get A Quote
+        </Link>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </motion.header>
   );
 }
