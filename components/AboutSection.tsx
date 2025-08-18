@@ -13,7 +13,7 @@ const AboutSection = () => {
         {/* Image */}
         <div className="w-full md:w-1/2 relative h-80 md:h-[400px]">
           <Image
-            src="/images/securityImg3.webp"
+            src="/images/securityImage2.jpg"
             alt="CrossFront Security Team"
             fill
             className="object-cover rounded-2xl"

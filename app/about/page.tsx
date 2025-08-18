@@ -22,7 +22,7 @@ const AboutPage = () => {
         <section className="flex flex-col md:flex-row items-center gap-10">
           <div className="w-full md:w-1/2 h-80 relative rounded-xl overflow-hidden">
             <Image
-              src="/images/securityImg3.webp"
+              src="/images/securityImage3.jpg"
               alt="CrossFront Security Team"
               fill
               className="object-cover"

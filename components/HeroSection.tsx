@@ -6,10 +6,10 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const heroImages = [
-  { src: '/images/securityImg1.webp', width: 1920, height: 1080 },
-  { src: '/images/securityImg2.webp', width: 1920, height: 1080 },
-  { src: '/images/securityImg3.webp', width: 1920, height: 1080 },
-  { src: '/images/securityImg4.webp', width: 1920, height: 1080 },
+  { src: '/images/securityImage1.webp', width: 1920, height: 1080 },
+  { src: '/images/securityImage2.jpg', width: 1920, height: 1080 },
+  { src: '/images/securityImage3.jpg', width: 1920, height: 1080 },
+  { src: '/images/securityImage4.jpg', width: 1920, height: 1080 },
 ];
 
 export function HeroSection() {

@@ -17,7 +17,7 @@ export const services: Service[] = [
     title: "Manned Guarding",
     description:
       "Trained and licensed personnel ensuring safety at all times for businesses, events, and private premises.",
-    image: "/images/securityImg1.webp",
+    image: "/images/securityImage1.webp",
     details: {
       intro:
         "Our trained and licensed personnel ensure around‑the‑clock safety for corporate, residential, and event sites.",
@@ -36,7 +36,7 @@ export const services: Service[] = [
     title: "Mobile Patrols",
     description:
       "Visible deterrents with mobile units providing surveillance and rapid response across multiple sites.",
-    image: "/images/securityImg4.webp",
+    image: "/images/securityImage5.jpeg",
     details: {
       intro:
         "Our mobile patrol teams provide flexible coverage across multiple locations, enhancing visibility and response time.",
@@ -55,7 +55,7 @@ export const services: Service[] = [
     title: "Event Security",
     description:
       "Crowd control, access monitoring, and risk management for events of all sizes.",
-    image: "/images/securityImg3.webp",
+    image: "/images/securityImage2.jpg",
     details: {
       intro:
         "From corporate events to concerts, our security teams manage access, crowd flow, and VIP protection with expert oversight.",
@@ -91,7 +91,7 @@ export const services: Service[] = [
     title: "Key Holding Service",
     description:
       "Secure key management and rapid dispatch when alarms are triggered—ensuring peace of mind around the clock.",
-    image: "/images/securityImg2.webp",
+    image: "/images/securityImage4.jpg",
     details: {
       intro:
         "Our key holding service ensures that only vetted staff can respond to your alarm events with immediate site access.",
@@ -110,7 +110,7 @@ export const services: Service[] = [
     title: "Construction Site Security",
     description:
       "Prevent theft, vandalism, and unauthorized access with specialized construction site protection.",
-    image: "/images/security1.jpg",
+    image: "/images/securityImage3.jpg",
     details: {
       intro:
         "Construction sites are high‑risk areas. Our security solutions protect your assets, materials, and contractors.",
