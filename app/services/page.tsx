@@ -8,17 +8,17 @@ const services = [
   {
     title: "Manned Guarding",
     description: "Trained and licensed personnel ensuring safety at all times for businesses, events, and private premises.",
-    image: "/images/securityImg1.webp",
+    image: "/images/securityImage1.webp",
   },
   {
     title: "Mobile Patrols",
     description: "Visible deterrents with mobile units providing surveillance and rapid response across multiple sites.",
-    image: "/images/securityImg4.webp",
+    image: "/images/securityImage5.jpeg",
   },
   {
     title: "Event Security",
     description: "Crowd control, access monitoring, and risk management for events of all sizes.",
-    image: "/images/securityImg3.webp",
+    image: "/images/securityImage2.jpg",
   },
   {
     title: "K9 Dog Units",
@@ -28,12 +28,12 @@ const services = [
   {
     title: "Key Holding",
     description: "Secure key management and rapid dispatch when alarms are triggered—ensuring peace of mind around the clock.",
-    image: "/images/securityImg2.webp",
+    image: "/images/securityImage4.jpg",
   },
   {
     title: "Construction Site Security",
     description: "Prevent theft, vandalism, and unauthorized access with specialized construction site protection.",
-    image: "/images/security1.jpg",
+    image: "/images/securityImage3.jpg",
   },
 ];
 
