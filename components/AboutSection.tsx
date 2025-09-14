@@ -32,14 +32,14 @@ const AboutSection = () => {
             security. With years of experience and a commitment to excellence,
             we provide tailored protection solutions for businesses, events,
             properties, and individuals across{" "}
-            <strong>[your region]</strong>. Our highly trained personnel,
+            <strong>UK</strong>. Our highly trained personnel,
             cutting-edge systems, and proactive approach make us the trusted
             partner for all your security needs.
           </p>
 
           <p className="text-gray-700 text-lg leading-relaxed">
             From manned guarding to K9 units, we deliver service with integrity,
-            discipline, and vigilance—ensuring safety without compromise.
+            discipline, and vigilance ensuring safety without compromise.
           </p>
 
           {/* CTA */}

@@ -14,7 +14,7 @@ const AboutPage = () => {
             About <span className="text-primary-color">CrossFront Services</span>
           </h1>
           <p className="text-black max-w-3xl mx-auto text-lg">
-            At CrossFront Services, we stand at the forefront of professional security. With decades of combined experience, we deliver exceptional security solutions tailored to protect people, properties, and assets across the UK.
+            At CrossFront Services, we stand at the forefront of professional security. As a modern and dynamic company, we deliver tailored security solutions designed to protect people, properties, and assets across the UK.
           </p>
         </section>
 
@@ -34,7 +34,7 @@ const AboutPage = () => {
               CrossFront Services is built on the pillars of integrity, discipline, and vigilance. We pride ourselves on our elite personnel, robust protocols, and proactive mindset. From private events to large-scale industrial sites, our trained professionals maintain a constant presence and rapid response capability, ensuring every client enjoys peace of mind.
             </p>
             <p className="text-black">
-              With a deep understanding of risk, compliance, and modern threats, we blend technology with human expertise to offer unmatched protection in dynamic environments.
+              With a strong focus on risk awareness, compliance, and modern security challenges, we deliver reliable protection through highly trained staff and proven practices, keeping people, properties, and assets safe in every environment.
             </p>
           </div>
         </section>
