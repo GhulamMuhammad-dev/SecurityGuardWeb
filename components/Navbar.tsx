@@ -7,11 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, Sparkles } from "lucide-react";
 
 const servicesData = [
+  { slug: "k9-dog-units", title: "K9 Dog Units" },
+   { slug: "construction-site-security", title: "Construction Site Security" },
   { slug: "manned-guarding", title: "Manned Guarding" },
   { slug: "mobile-patrols", title: "Mobile Patrols" },
-  { slug: "k9-dog-units", title: "K9 Dog Units" },
   { slug: "event-security", title: "Event Security" },
-  { slug: "construction-site-security", title: "Construction Site Security" },
   { slug: "key-holding", title: "Key Holding" },
 ];
 

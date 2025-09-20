@@ -58,11 +58,11 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-primary-color">Services</h3>
             <FooterLinkList
               links={[
+                 { label: "K9 Dog Units", href: "/serviceInfo/k9-dog-units" },
+                 { label: "Construction Site Security", href: "/serviceInfo/construction-site-security" },
                 { label: "Manned Guarding", href: "/serviceInfo/manned-guarding" },
                 { label: "Mobile Patrols", href: "/serviceInfo/mobile-patrols" },
-                { label: "K9 Dog Units", href: "/serviceInfo/k9-dog-units" },
                 { label: "Event Security", href: "/serviceInfo/event-security" },
-                { label: "Construction Site Security", href: "/serviceInfo/construction-site-security" },
                 { label: "Key Holding", href: "/serviceInfo/key-holding" },
               ]}
             />
