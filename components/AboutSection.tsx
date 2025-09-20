@@ -28,18 +28,11 @@ const AboutSection = () => {
           </h2>
 
           <p className="text-gray-700 text-lg leading-relaxed">
-            At CrossFront Services, we stand at the forefront of professional
-            security. With years of experience and a commitment to excellence,
-            we provide tailored protection solutions for businesses, events,
-            properties, and individuals across{" "}
-            <strong>UK</strong>. Our highly trained personnel,
-            cutting-edge systems, and proactive approach make us the trusted
-            partner for all your security needs.
+           At CrossFront Services, we stand at the forefront of professional security. With a commitment to excellence, we provide tailored protection solutions for businesses, events, properties, and individuals across the <strong>UK</strong>. Our highly trained personnel and proactive approach make us a trusted partner for all your security needs.
           </p>
 
           <p className="text-gray-700 text-lg leading-relaxed">
-            From manned guarding to K9 units, we deliver service with integrity,
-            discipline, and vigilance ensuring safety without compromise.
+            From manned guarding to K9 units, we deliver our services with integrity, discipline, and vigilance ensuring safety without compromise.
           </p>
 
           {/* CTA */}

@@ -73,7 +73,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-primary-color">Contact Us</h3>
             <address className="not-italic text-sm space-y-3">
               {/* <ContactItem icon={<MapPinIcon />} text="456 Shield Lane, London, UK" /> */}
-              <ContactItem icon={<PhoneIcon />} text={<a href="tel:+442033221100">+44 20 3322 1100</a>} />
+              <ContactItem icon={<PhoneIcon />} text={<a href="tel:+442033221100">+447932417963</a>} />
               <ContactItem icon={<MailIcon />} text={<a href="mailto:info@crossfrontservices.co.uk">info@crossfrontservices.com</a>} />
               <ContactItem icon={<ClockIcon />} text="24/7 Response Nationwide" />
             </address>

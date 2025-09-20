@@ -111,7 +111,7 @@ export default function Navbar() {
           </div>
 
           <motion.div whileHover={{ scale: 1.05 }}>
-            <Link href="#coverage" className="hover:text-primary-color">Coverage</Link>
+            <Link href="/#coverage" className="hover:text-primary-color">Coverage</Link>
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.05 }}>
