@@ -13,7 +13,7 @@ const services = [
   {
     title: "Mobile Patrols",
     description: "Visible deterrents with mobile units providing surveillance and rapid response across multiple sites.",
-    image: "/images/securityImage5.jpeg",
+    image: "/images/securityImage5.jpg",
   },
   {
     title: "Event Security",

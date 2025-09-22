@@ -36,7 +36,7 @@ export const services: Service[] = [
     title: "Mobile Patrols",
     description:
       "Visible deterrents with mobile units providing surveillance and rapid response across multiple sites.",
-    image: "/images/securityImage5.jpeg",
+    image: "/images/securityImage5.jpg",
     details: {
       intro:
         "Our mobile patrol teams provide flexible coverage across multiple locations, enhancing visibility and response time.",
