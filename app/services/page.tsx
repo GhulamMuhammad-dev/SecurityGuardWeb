@@ -27,7 +27,7 @@ const services = [
   },
   {
     title: "Key Holding",
-    description: "Secure key management and rapid dispatch when alarms are triggered—ensuring peace of mind around the clock.",
+    description: "Secure key management and rapid dispatch when alarms are triggered ensuring peace of mind around the clock.",
     image: "/images/securityImage4.jpg",
   },
   {

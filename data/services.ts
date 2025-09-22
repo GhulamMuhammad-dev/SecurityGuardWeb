@@ -90,7 +90,7 @@ export const services: Service[] = [
     slug: "key-holding",
     title: "Key Holding Service",
     description:
-      "Secure key management and rapid dispatch when alarms are triggered—ensuring peace of mind around the clock.",
+      "Secure key management and rapid dispatch when alarms are triggered ensuring peace of mind around the clock.",
     image: "/images/securityImage4.jpg",
     details: {
       intro:

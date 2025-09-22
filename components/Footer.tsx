@@ -86,9 +86,9 @@ export function Footer() {
             &copy; {new Date().getFullYear()} CrossFront Services. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <FooterPolicyLink label="Privacy Policy" href="/privacy-policy" />
+            {/* <FooterPolicyLink label="Privacy Policy" href="/privacy-policy" />
             <FooterPolicyLink label="Terms of Service" href="/terms" />
-            <FooterPolicyLink label="Sitemap" href="/sitemap" />
+            <FooterPolicyLink label="Sitemap" href="/sitemap" /> */}
           </div>
         </div>
       </div>
@@ -129,13 +129,13 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
   );
 }
 
-function FooterPolicyLink({ label, href }: { label: string; href: string }) {
-  return (
-    <Link href={href} className="hover:text-primary-color transition-colors">
-      {label}
-    </Link>
-  );
-}
+// function FooterPolicyLink({ label, href }: { label: string; href: string }) {
+//   return (
+//     <Link href={href} className="hover:text-primary-color transition-colors">
+//       {label}
+//     </Link>
+//   );
+// }
 
 // === Icons ===
 

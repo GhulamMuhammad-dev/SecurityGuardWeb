@@ -194,7 +194,7 @@ export default function Navbar() {
           </div>
         </details>
 
-        <Link href="#coverage" onClick={() => setMenuOpen(false)} className="hover:text-primary-color">
+        <Link href="/#coverage" onClick={() => setMenuOpen(false)} className="hover:text-primary-color">
           Coverage
         </Link>
         <Link href="/online-quote" onClick={() => setMenuOpen(false)} className="hover:text-primary-color">

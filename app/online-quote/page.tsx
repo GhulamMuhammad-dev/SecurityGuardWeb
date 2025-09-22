@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 const services = [
+   "K9 Dog Units",
+   "Construction Site Security",
   "Manned Guarding",
   "Mobile Patrols",
-  "K9 Dog Units",
   "Event Security",
-  "Construction Site Security",
   "Key Holding",
 ];
 
@@ -136,10 +136,7 @@ export default function QuotationForm() {
 
           {/* Privacy Note */}
           <p className="text-xs text-gray-500 mt-4">
-            CrossFront Services needs the contact information you provide to contact you about our products and services. You may unsubscribe from these communications at any time. For more information, see our{" "}
-            <a href="/privacy-policy" className="text-primary-color underline font-medium">
-              Privacy Policy
-            </a>.
+            CrossFront Services needs the contact information you provide to contact you about our products and services. You may unsubscribe from these communications at any time.
           </p>
 
           {/* Submit */}
