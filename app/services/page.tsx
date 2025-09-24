@@ -5,6 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 const services = [
+   {
+    title: "Construction Site Security",
+    description: "Prevent theft, vandalism, and unauthorized access with specialized construction site protection.",
+    image: "/images/securityImage3.jpg",
+  },
+    {
+    title: "Event Security",
+    description: "Crowd control, access monitoring, and risk management for events of all sizes.",
+    image: "/images/securityImage2.jpg",
+  },
   {
     title: "Manned Guarding",
     description: "Trained and licensed personnel ensuring safety at all times for businesses, events, and private premises.",
@@ -16,25 +26,16 @@ const services = [
     image: "/images/securityImage5.jpg",
   },
   {
-    title: "Event Security",
-    description: "Crowd control, access monitoring, and risk management for events of all sizes.",
-    image: "/images/securityImage2.jpg",
-  },
-  {
-    title: "K9 Dog Units",
-    description: "Professional dog units trained in detection, deterrence, and tactical response.",
-    image: "/images/k9Dog.jpg",
-  },
-  {
     title: "Key Holding",
     description: "Secure key management and rapid dispatch when alarms are triggered ensuring peace of mind around the clock.",
     image: "/images/securityImage4.jpg",
   },
-  {
-    title: "Construction Site Security",
-    description: "Prevent theft, vandalism, and unauthorized access with specialized construction site protection.",
-    image: "/images/securityImage3.jpg",
+    {
+    title: "K9 Dog Units",
+    description: "Professional dog units trained in detection, deterrence, and tactical response.",
+    image: "/images/k9Dog.jpg",
   },
+
 ];
 
 const ServicesPage = () => {
