@@ -5,15 +5,19 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const transporter = nodemailer.createTransport({
-      host: "smtpout.secureserver.net", // GoDaddy SMTP
-      port: 465,
-      secure: true,
-      auth: {
-        user: "hassan@crossfrontservices.com",
-        pass: "Cfs-Hassan123",
-      },
-    });
+   const transporter = nodemailer.createTransport({
+  host: "smtpout.secureserver.net",
+  port: 587,               // ✅ use 587 instead of 465
+  secure: false,           // ✅ false for STARTTLS
+  auth: {
+    user: "hassan@crossfrontservices.com",
+    pass: "Cfs-Hassan123", // store in .env.local
+  },
+  tls: {
+    rejectUnauthorized: false, // ✅ helps bypass self-signed issues
+  },
+});
+
 
     const servicesList = body.services?.length ? body.services.join(", ") : "None";
     const daysList = body.days?.length

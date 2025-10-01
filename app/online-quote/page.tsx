@@ -19,6 +19,7 @@ export default function QuotationForm() {
   const [dailyHours, setDailyHours] = useState<{ [key: string]: string }>({});
   const [selectedDays, setSelectedDays] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   const handleServiceToggle = (service: string) => {
     setSelectedServices((prev) =>
@@ -35,6 +36,7 @@ export default function QuotationForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setStatusMessage(null);
 
     const formData = new FormData(e.currentTarget);
     const data = {
@@ -56,15 +58,26 @@ export default function QuotationForm() {
       },
     };
 
-    const res = await fetch("/api/quote", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    const result = await res.json();
-    alert(result.message);
-    setLoading(false);
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        setStatusMessage({ type: "success", text: "✅ Quotation request sent successfully!" });
+      } else {
+        setStatusMessage({ type: "error", text: "❌ Failed to send quotation request. Try again later." });
+      }
+    } catch (err) {
+      console.error(err);
+      setStatusMessage({ type: "error", text: "❌ Network error. Please try again." });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -183,6 +196,17 @@ export default function QuotationForm() {
           >
             {loading ? "Sending..." : "Submit"}
           </button>
+
+          {/* Status Message */}
+          {statusMessage && (
+            <p
+              className={`mt-3 text-center text-sm font-medium ${
+                statusMessage.type === "success" ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {statusMessage.text}
+            </p>
+          )}
         </form>
       </div>
     </div>
