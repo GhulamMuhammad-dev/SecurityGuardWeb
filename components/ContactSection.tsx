@@ -48,35 +48,6 @@ export function ContactSection() {
               />
             </div>
           </div>
-
-          {/* <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label htmlFor="email" className="block text-sm font-medium">
-                Email Address *
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="john@example.com"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
-                required
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="phone" className="block text-sm font-medium">
-                Phone Number *
-              </label>
-              <input
-                id="phone"
-                type="tel"
-                placeholder="+44 7700 900123"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
-                required
-              />
-            </div>
-          </div> */}
-
           <div className="space-y-2">
             <label htmlFor="service" className="block text-sm font-medium">
               Service Required *

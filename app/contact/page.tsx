@@ -1,126 +1,68 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    const formData = {
+      name: (form.querySelector("#name") as HTMLInputElement).value,
+      email: (form.querySelector("#email") as HTMLInputElement).value,
+      phone: (form.querySelector("#phone") as HTMLInputElement).value,
+      service: (form.querySelector("#service") as HTMLSelectElement).value,
+      message: (form.querySelector("#message") as HTMLTextAreaElement).value,
+    };
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await res.json();
+    alert(result.message);
+    form.reset();
+  };
+
   return (
-    <section
-      className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937] relative overflow-hidden"
-      id="contact"
-    >
-      <div className="relative max-w-4xl mx-auto">
+    <section className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937]" id="contact">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-primary-color font-semibold tracking-wider uppercase text-sm">
             Get in Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Let&apos;s Secure What{" "}
-            <span className="text-primary-color">Matters Most</span>
+            Let&apos;s Secure What <span className="text-primary-color">Matters Most</span>
           </h2>
           <p className="text-xl max-w-2xl mx-auto text-[#6B7280]">
-            Our security experts are available 24/7 to discuss your unique
-            protection needs.
+            Our security experts are available 24/7 to discuss your unique protection needs.
           </p>
         </div>
 
-        <form className="bg-white shadow-xl p-8 md:p-10 rounded-xl border border-[#E5E7EB] space-y-6">
+        <form onSubmit={handleSubmit} className="bg-white shadow-xl p-8 md:p-10 rounded-xl space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label htmlFor="name" className="block text-sm font-medium">
-                Full Name *
-              </label>
-              <input
-                id="name"
-                type="text"
-                placeholder="John Smith"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
-                required
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="company" className="block text-sm font-medium">
-                Company Name
-              </label>
-              <input
-                id="company"
-                type="text"
-                placeholder="Acme Corporation"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
-              />
-            </div>
+            <input id="name" type="text" placeholder="Full Name *" required className="input" />
+            <input id="company" type="text" placeholder="Company Name" className="input" />
           </div>
-
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label htmlFor="email" className="block text-sm font-medium">
-                Email Address *
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="john@example.com"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
-                required
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="phone" className="block text-sm font-medium">
-                Phone Number *
-              </label>
-              <input
-                id="phone"
-                type="tel"
-                placeholder="+44 7700 900123"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
-                required
-              />
-            </div>
+            <input id="email" type="email" placeholder="Email *" required className="input" />
+            <input id="phone" type="tel" placeholder="Phone *" required className="input" />
           </div>
-
-          <div className="space-y-2">
-            <label htmlFor="service" className="block text-sm font-medium">
-              Service Required *
-            </label>
-            <select
-              id="service"
-              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] appearance-none transition-all"
-              required
-            >
-              <option value="">Select a service</option>
-              <option value="manned">Manned Guarding</option>
-              <option value="mobile">Mobile Patrols</option>
-              <option value="event">Event Security</option>
-              <option value="k9">K9 Dog Units</option>
-              <option value="keyholding">Key Holding Service</option>
-              <option value="construction">Construction Site Security</option>
-            </select>
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="message" className="block text-sm font-medium">
-              Your Security Needs *
-            </label>
-            <textarea
-              id="message"
-              rows={4}
-              placeholder="Tell us about your security requirements..."
-              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-primary-color/50 text-[#1F2937] placeholder-[#9CA3AF] transition-all"
-              required
-            ></textarea>
-          </div>
-
-          <div className="pt-4">
-            <Button
-              type="submit"
-              className="w-full bg-primary-color hover:bg-primary-color-hover text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
-            >
-              Request Security Consultation
-            </Button>
-          </div>
-
-          <p className="text-center text-sm text-[#6B7280]">
-            We&apos;ll respond to your inquiry within 2 business hours.
-          </p>
+          <select id="service" required className="input">
+            <option value="">Select a service</option>
+            <option value="manned">Manned Guarding</option>
+            <option value="mobile">Mobile Patrols</option>
+            <option value="event">Event Security</option>
+            <option value="k9">K9 Dog Units</option>
+            <option value="keyholding">Key Holding Service</option>
+            <option value="construction">Construction Site Security</option>
+          </select>
+          <textarea id="message" rows={4} placeholder="Your Security Needs *" required className="input"></textarea>
+          <Button type="submit" className="w-full bg-primary-color text-white py-6 text-lg">
+            Request Security Consultation
+          </Button>
         </form>
       </div>
     </section>
