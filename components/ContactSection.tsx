@@ -1,8 +1,60 @@
 'use client';
 
+import { useState } from "react";
 import { Button } from "./ui/button";
 
 export function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    service: "",
+    message: "",
+    email: "",
+    phone: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("✅ Email sent successfully!");
+        setFormData({
+          name: "",
+          company: "",
+          service: "",
+          message: "",
+          email: "",
+          phone: "",
+        });
+      } else {
+        setStatus("❌ Failed to send email.");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("❌ Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section
       className="py-28 px-6 bg-[#F9FAFB] text-[#1F2937] relative overflow-hidden"
@@ -21,7 +73,10 @@ export function ContactSection() {
           </p>
         </div>
 
-        <form className="bg-white shadow-xl p-8 md:p-10 rounded-xl border border-[#E5E7EB] space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow-xl p-8 md:p-10 rounded-xl border border-[#E5E7EB] space-y-6"
+        >
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="name" className="block text-sm font-medium">
@@ -31,8 +86,10 @@ export function ContactSection() {
                 id="name"
                 type="text"
                 placeholder="John Smith"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                value={formData.name}
+                onChange={handleChange}
                 required
+                className="w-full px-4 py-3 rounded-lg border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5]"
               />
             </div>
 
@@ -44,27 +101,64 @@ export function ContactSection() {
                 id="company"
                 type="text"
                 placeholder="Acme Corporation"
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+                value={formData.company}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5]"
               />
             </div>
           </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label htmlFor="email" className="block text-sm font-medium">
+                Email *
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="john@email.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-[#D1D5DB]"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="phone" className="block text-sm font-medium">
+                Phone *
+              </label>
+              <input
+                id="phone"
+                type="text"
+                placeholder="+1 (555) 000-0000"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-[#D1D5DB]"
+              />
+            </div>
+          </div>
+
           <div className="space-y-2">
             <label htmlFor="service" className="block text-sm font-medium">
               Service Required *
             </label>
             <select
               id="service"
-              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] appearance-none transition-all"
+              value={formData.service}
+              onChange={handleChange}
               required
+              className="w-full px-4 py-3 rounded-lg border border-[#D1D5DB]"
             >
               <option value="">Select a service</option>
-              <option value="static">Manned Guarding</option>
-              <option value="mobile">Mobile Patrols</option>
-              <option value="construction">Construction Site Security</option>
-              <option value="k9">K9 Dog Units</option>
-              <option value="key">Key Holding Service</option>
-              <option value="event">Event Security</option>
-              <option value="other">Other Security Needs</option>
+              <option value="Manned Guarding">Manned Guarding</option>
+              <option value="Mobile Patrols">Mobile Patrols</option>
+              <option value="Construction Site Security">Construction Site Security</option>
+              <option value="K9 Dog Units">K9 Dog Units</option>
+              <option value="Key Holding Service">Key Holding Service</option>
+              <option value="Event Security">Event Security</option>
+              <option value="Other">Other Security Needs</option>
             </select>
           </div>
 
@@ -76,23 +170,28 @@ export function ContactSection() {
               id="message"
               rows={4}
               placeholder="Tell us about your security requirements..."
-              className="w-full px-4 py-3 rounded-lg bg-white border border-[#D1D5DB] focus:border-primary-color focus:ring-2 focus:ring-[color:var(--primary-color)/0.5] text-[#1F2937] placeholder-[#9CA3AF] transition-all"
+              value={formData.message}
+              onChange={handleChange}
               required
+              className="w-full px-4 py-3 rounded-lg border border-[#D1D5DB]"
             ></textarea>
           </div>
 
           <div className="pt-4">
             <Button
               type="submit"
-              className=" cursor-pointer w-full bg-primary-color hover:bg-primary-color-hover text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
+              disabled={loading}
+              className="cursor-pointer w-full bg-primary-color hover:bg-primary-color-hover text-white font-semibold py-6 text-lg transition-all transform hover:scale-[1.02]"
             >
-              Request Security Consultation
+              {loading ? "Sending..." : "Request Security Consultation"}
             </Button>
           </div>
 
-          <p className="text-center text-sm text-[#6B7280]">
-            We&apos;ll respond to your inquiry within 2 business hours.
-          </p>
+          {status && (
+            <p className="text-center text-sm mt-4 text-[#6B7280]">
+              {status}
+            </p>
+          )}
         </form>
       </div>
     </section>
